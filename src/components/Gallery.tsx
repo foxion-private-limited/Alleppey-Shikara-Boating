@@ -200,7 +200,7 @@ export default function Gallery() {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
           </Link>
           <p className="text-xs text-earth-700/70 mt-3 font-light">
-            Explore all 16 authentic moments from our Alleppey shikara cruises
+            Explore authentic moments from our Alleppey shikara cruises
           </p>
         </div>
       </div>
@@ -305,7 +305,7 @@ export default function Gallery() {
               onClick={handleCloseLightbox}
               className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-cream-100 hover:bg-white text-forest-950 text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm"
             >
-              <span>View All 16 Photos</span>
+              <span>View All Photos</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>

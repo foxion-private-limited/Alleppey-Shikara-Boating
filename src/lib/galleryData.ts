@@ -22,7 +22,6 @@ export const GALLERY_CATEGORIES = [
   'Couples & Romance',
   'Family & Friends',
   'Village Canals',
-  'Sunsets',
 ] as const;
 
 export type GalleryCategory = (typeof GALLERY_CATEGORIES)[number];
@@ -223,19 +222,5 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     location: 'Quiet Village Stretch',
     alt: 'Couple enjoying a romantic moment on the front of Shikara boat under bright blue skies',
     span: 'col-span-1 sm:col-span-1 lg:col-span-4',
-  },
-
-  // --- ROW 8: Golden Sunset Finale (Centered Showcase) ---
-  {
-    id: 16,
-    src: '/gallery/16.jpg',
-    width: 1632,
-    height: 2604,
-    aspectRatio: 0.627,
-    title: 'Alappuzha Sunset Finale',
-    category: 'Sunsets',
-    location: 'Vembanad Lake Horizon',
-    alt: 'Glowing orange sunset reflecting across ripples of Alleppey backwater lake at dusk',
-    span: 'col-span-1 sm:col-span-2 lg:col-span-6 lg:col-start-4',
   },
 ];

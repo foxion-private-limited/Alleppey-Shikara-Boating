@@ -124,7 +124,7 @@ export default function GalleryView({ initialPhotos = [] }: GalleryViewProps) {
 
       <main className="flex-grow">
         {/* 2. Page Header Banner */}
-        <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 bg-gradient-to-b from-forest-950 via-forest-900 to-forest-950 text-cream-50 overflow-hidden">
+        <section className="relative pt-20 pb-12 sm:pt-24 sm:pb-16 bg-gradient-to-b from-forest-950 via-forest-900 to-forest-950 text-cream-50 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-forest-800/30 via-transparent to-transparent pointer-events-none" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -141,17 +141,40 @@ export default function GalleryView({ initialPhotos = [] }: GalleryViewProps) {
               <span className="text-gold-400 font-medium">Gallery</span>
             </div>
 
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cream-50/10 border border-cream-100/20 text-gold-400 text-xs font-semibold uppercase tracking-widest mb-4">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Photographic Collection · 16 Moments</span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div className="lg:col-span-7">
+                <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cream-50/10 border border-cream-100/20 text-gold-400 text-xs font-semibold uppercase tracking-widest mb-4">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Photographic Collection · {initialPhotos.length} Moments</span>
+                </div>
+                <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.14] text-cream-50 mb-5">
+                  Moments From the Backwaters
+                </h1>
+                <p className="text-base sm:text-lg text-cream-100/90 font-light leading-relaxed max-w-2xl">
+                  An art-directed photographic collection of authentic guest voyages, quiet village canal crossings, and serene waterways in Alappuzha, Kerala.
+                </p>
               </div>
-              <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.14] text-cream-50 mb-5">
-                Moments From the Backwaters
-              </h1>
-              <p className="text-base sm:text-lg text-cream-100/90 font-light leading-relaxed max-w-2xl">
-                An art-directed photographic collection of authentic guest voyages, quiet village canal crossings, and golden sunsets along the waterways of Alappuzha, Kerala.
-              </p>
+
+              <div className="lg:col-span-5">
+                <div className="relative rounded-2xl overflow-hidden border border-cream-100/15 shadow-2xl bg-forest-900/60 aspect-[16/10]">
+                  <Image
+                    src="/gallery/1.jpg"
+                    alt="Traditional Shikara Boat cruising through Punnamada Lake, Alappuzha"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest-950/70 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[11px] text-cream-200/90 font-light pointer-events-none">
+                    <span className="flex items-center space-x-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-gold-400" />
+                      <span>Punnamada Lake, Alappuzha</span>
+                    </span>
+                    <span className="text-[10px] uppercase tracking-wider text-gold-400 font-medium">Featured</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Category Filter Pills */}
