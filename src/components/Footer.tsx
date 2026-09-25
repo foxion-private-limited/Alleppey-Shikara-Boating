@@ -1,6 +1,9 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Compass, Phone, Mail, MapPin, MessageCircle, ArrowRight } from 'lucide-react';
 import { BUSINESS_CONFIG, NAV_LINKS } from '@/lib/constants';
 
@@ -24,6 +27,15 @@ function FacebookIcon({ className = 'w-4 h-4' }: { className?: string }) {
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
+  const getHref = (href: string) => {
+    if (isHome) return href;
+    if (href === '#' || href === '') return '/';
+    if (href.startsWith('#')) return `/${href}`;
+    return href;
+  };
 
   return (
     <footer id="contact" className="relative text-cream-50 overflow-hidden">
@@ -89,7 +101,7 @@ export default function Footer() {
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>
                   <a
-                    href={link.href}
+                    href={getHref(link.href)}
                     className="text-sm text-cream-200/80 hover:text-cream-50 transition-colors"
                   >
                     {link.label}
@@ -98,7 +110,7 @@ export default function Footer() {
               ))}
               <li>
                 <a
-                  href="#faq"
+                  href={getHref('#faq')}
                   className="text-sm text-cream-200/80 hover:text-cream-50 transition-colors"
                 >
                   FAQ

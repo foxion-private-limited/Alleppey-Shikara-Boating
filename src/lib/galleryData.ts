@@ -200,8 +200,6 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     alt: 'Lady in blue dress smiling on Shikara boat with coconut groves and blue sky in background',
     span: 'col-span-1 sm:col-span-1 lg:col-span-4',
   },
-
-  // --- ROW 7: Twilight Romance & Dreamcatchers (8 + 4 = 12 cols) ---
   {
     id: 6,
     src: '/gallery/6.jpg',
@@ -227,13 +225,13 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     span: 'col-span-1 sm:col-span-1 lg:col-span-4',
   },
 
-  // --- ROW 8: Golden Sunset Finale (Centered Landscape Showcase) ---
+  // --- ROW 8: Golden Sunset Finale (Centered Showcase) ---
   {
     id: 16,
     src: '/gallery/16.jpg',
-    width: 750,
-    height: 1200,
-    aspectRatio: 0.63,
+    width: 1632,
+    height: 2604,
+    aspectRatio: 0.627,
     title: 'Alappuzha Sunset Finale',
     category: 'Sunsets',
     location: 'Vembanad Lake Horizon',

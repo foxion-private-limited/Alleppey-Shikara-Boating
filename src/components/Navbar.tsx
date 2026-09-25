@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, Compass } from 'lucide-react';
 import { NAV_LINKS } from '@/lib/constants';
 
@@ -12,6 +13,17 @@ interface NavbarProps {
 export default function Navbar({ onOpenBooking }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
+  // Dynamic anchor resolver: on '/', keeps in-page smooth scrolls (#food).
+  // On other pages (like /gallery), targets homepage section (/#food).
+  const getHref = (href: string) => {
+    if (isHome) return href;
+    if (href === '#' || href === '') return '/';
+    if (href.startsWith('#')) return `/${href}`;
+    return href;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,8 +43,12 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     if (onOpenBooking) {
       onOpenBooking();
     } else {
-      const el = document.getElementById('contact');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (isHome) {
+        const el = document.getElementById('contact');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = '/#contact';
+      }
     }
   };
 
@@ -48,7 +64,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         <div className="flex items-center justify-between">
           {/* Logo / Brand Name */}
           <Link
-            href="#"
+            href={isHome ? '#' : '/'}
             className="group flex items-center space-x-2.5 focus:outline-none"
             aria-label="Alleppey Village Shikara Boating Home"
           >
@@ -84,7 +100,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
+                href={getHref(link.href)}
                 className={`text-sm font-medium tracking-wide transition-colors duration-200 relative group py-1 ${
                   isScrolled
                     ? 'text-forest-800 hover:text-forest-950'
@@ -142,7 +158,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}
-                  href={link.href}
+                  href={getHref(link.href)}
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-base font-medium text-forest-900 hover:text-forest-700 py-2 border-b border-forest-100/80 transition-colors"
                 >
