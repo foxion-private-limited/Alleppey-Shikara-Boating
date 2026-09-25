@@ -166,12 +166,12 @@ export default function Footer() {
                 <span>WhatsApp: {BUSINESS_CONFIG.contact.phone}</span>
               </a>
               <a
-                href={`mailto:${BUSINESS_CONFIG.contact.emailPlaceholder}`}
+                href={`mailto:${BUSINESS_CONFIG.contact.email}`}
                 className="flex items-center space-x-2 hover:text-white transition-colors"
-                aria-label={`Send email to ${BUSINESS_CONFIG.contact.emailPlaceholder}`}
+                aria-label={`Send email to ${BUSINESS_CONFIG.contact.email}`}
               >
                 <Mail className="w-3.5 h-3.5 text-cream-300" />
-                <span>{BUSINESS_CONFIG.contact.emailPlaceholder}</span>
+                <span>{BUSINESS_CONFIG.contact.email}</span>
               </a>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Sailboat, Waves, Utensils, Anchor, Compass, ArrowRight } from 'lucide-react';
+import { Sailboat, Waves, Utensils, Anchor, Compass, ArrowRight, Ship } from 'lucide-react';
 
 interface FeaturedExperienceProps {
   onOpenBooking?: () => void;
@@ -11,6 +11,7 @@ const features = [
   { name: 'Kayaking', icon: Waves, desc: 'Paddle through serene narrow canals' },
   { name: 'Canoeing', icon: Compass, desc: 'Traditional country canoe experience' },
   { name: 'Speed Boat', icon: Anchor, desc: 'Exhilarating open lake cruise' },
+  { name: 'Open Boating', icon: Ship, desc: 'Panoramic open-air backwater cruising' },
   { name: 'Traditional Lunch', icon: Utensils, desc: 'Authentic Kerala meals on banana leaf' },
 ];
 

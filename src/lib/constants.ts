@@ -5,6 +5,10 @@
 
 const rawWhatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+916282995964';
 const cleanWhatsappDigits = rawWhatsapp.replace(/\D/g, '');
+const contactEmail =
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL ||
+  process.env.ADMIN_EMAIL ||
+  'alleppeyvillageshikaraboating@gmail.com';
 
 export const BUSINESS_CONFIG = {
   name: 'Alleppey Village Shikara Boating',
@@ -28,7 +32,8 @@ export const BUSINESS_CONFIG = {
     whatsappNumberPlaceholder: cleanWhatsappDigits,
     whatsappCleanDigits: cleanWhatsappDigits,
     whatsappMessagePlaceholder: 'Hi, I would like to enquire about a Shikara boating experience in Alappuzha.',
-    emailPlaceholder: 'info@alleppeyvillageshikaraboating.com',
+    email: contactEmail,
+    emailPlaceholder: contactEmail,
   },
   social: {
     instagram: 'https://instagram.com',
