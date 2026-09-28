@@ -60,7 +60,7 @@ Alleppey_Shikara/
 │   │   ├── JourneySection.tsx    # 2-hour & 3-hour backwater journey timelines
 │   │   ├── Location.tsx          # Boarding address details with interactive Google Maps embed
 │   │   ├── Navbar.tsx            # Sticky desktop and mobile responsive navigation
-│   │   ├── PricingSection.tsx    # Dynamic base rate, packages, and seasonal discount badges
+│   │   ├── PricingSection.tsx    # Dynamic base rate, packages, and booking modal triggers
 │   │   ├── Testimonials.tsx      # Verified guest reviews with moderation form modal
 │   │   ├── TrustBar.tsx          # Key proof points (5+ years, authentic routes, private boats)
 │   │   └── WhyChooseUs.tsx       # Core value propositions

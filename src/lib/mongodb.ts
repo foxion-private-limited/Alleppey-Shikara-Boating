@@ -193,8 +193,8 @@ export const DEFAULT_PACKAGES = [
     description:
       'A serene tour through Punnamada Lake, quiet village canals, and open paddy fields.',
     price: 1200,
-    originalPrice: 1300,
-    offerActive: true,
+    originalPrice: null,
+    offerActive: false,
     maxPeople: 6,
     recommended: false,
     active: true,
@@ -207,8 +207,8 @@ export const DEFAULT_PACKAGES = [
     description:
       'Our signature recommended voyage including Vembanad Lake, a short village walk, and hidden interior canals.',
     price: 1800,
-    originalPrice: 1950,
-    offerActive: true,
+    originalPrice: null,
+    offerActive: false,
     maxPeople: 6,
     recommended: true,
     active: true,

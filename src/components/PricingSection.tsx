@@ -153,15 +153,6 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
 
           {/* Cards 2+: Dynamic Packages from MongoDB */}
           {packages.map((pkg) => {
-            const hasOffer =
-              pkg.offerActive &&
-              pkg.originalPrice &&
-              pkg.originalPrice > pkg.price;
-
-            const discount = hasOffer
-              ? Math.round(((pkg.originalPrice! - pkg.price) / pkg.originalPrice!) * 100)
-              : 0;
-
             const isHighlighted = pkg.recommended;
 
             return (
@@ -191,40 +182,16 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
                   </div>
 
                   <div className="mb-4 pb-4 border-b border-forest-100">
-                    {hasOffer ? (
-                      <div className="space-y-1">
-                        <div className="flex items-baseline space-x-2">
-                          <span className="font-serif text-3xl sm:text-4xl font-semibold text-forest-950">
-                            ₹{pkg.price}
-                          </span>
-                          <span className="text-xs text-earth-700 font-medium">
-                            {pkg.duration.toLowerCase().includes('custom')
-                              ? '/ hour'
-                              : 'ride'}
-                          </span>
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider">
-                            {discount}% OFF
-                          </span>
-                        </div>
-                        <div className="flex items-center space-x-1.5 text-xs text-earth-600 font-light">
-                          <span>Original price:</span>
-                          <span className="line-through text-earth-500 font-normal">
-                            ₹{pkg.originalPrice}
-                          </span>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="flex items-baseline space-x-2">
-                        <span className="font-serif text-3xl sm:text-4xl font-semibold text-forest-950">
-                          ₹{pkg.price}
-                        </span>
-                        <span className="text-xs text-earth-700 font-medium">
-                          {pkg.duration.toLowerCase().includes('custom')
-                            ? '/ hour'
-                            : 'ride'}
-                        </span>
-                      </div>
-                    )}
+                    <div className="flex items-baseline space-x-2">
+                      <span className="font-serif text-3xl sm:text-4xl font-semibold text-forest-950">
+                        ₹{pkg.price}
+                      </span>
+                      <span className="text-xs text-earth-700 font-medium">
+                        {pkg.duration.toLowerCase().includes('custom')
+                          ? '/ hour'
+                          : 'ride'}
+                      </span>
+                    </div>
                   </div>
 
                   <p className="text-xs text-earth-800 font-light leading-relaxed mb-6">

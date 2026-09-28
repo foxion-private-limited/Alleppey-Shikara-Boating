@@ -69,8 +69,8 @@ const DEFAULT_PACKAGES = [
     description:
       'A serene tour through Punnamada Lake, quiet village canals, and open paddy fields.',
     price: 1200,
-    originalPrice: 1300,
-    offerActive: true,
+    originalPrice: null,
+    offerActive: false,
     maxPeople: 6,
     recommended: false,
     active: true,
@@ -82,8 +82,8 @@ const DEFAULT_PACKAGES = [
     description:
       'Our signature recommended voyage including Vembanad Lake, a short village walk, and hidden interior canals.',
     price: 1800,
-    originalPrice: 1950,
-    offerActive: true,
+    originalPrice: null,
+    offerActive: false,
     maxPeople: 6,
     recommended: true,
     active: true,
@@ -126,13 +126,14 @@ async function runSeed() {
       console.log('Updated existing Pricing in MongoDB to base rate ₹600 without previous offer rate:', existingPricing);
     }
 
-    // 2. Seed Packages
+    // 2. Seed or update Packages
     const packageCount = await Package.countDocuments();
     if (packageCount === 0) {
       const createdPkgs = await Package.insertMany(DEFAULT_PACKAGES);
       console.log(`Seeded ${createdPkgs.length} packages into MongoDB!`);
     } else {
-      console.log(`Found ${packageCount} existing packages in MongoDB.`);
+      await Package.updateMany({}, { $set: { originalPrice: null, offerActive: false } });
+      console.log(`Updated all ${packageCount} existing packages in MongoDB: cleared originalPrice and set offerActive to false.`);
     }
 
     console.log('MongoDB Atlas seeding completed successfully!');
