@@ -5,6 +5,7 @@ import { getBaseUrl } from './siteUrl';
  * Designed to easily update with real contact & booking information.
  */
 
+// const rawWhatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+916282995964'; // DEPRECATED: Old incorrect number - commented out
 const rawWhatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+91 95626 27451';
 const cleanWhatsappDigits = rawWhatsapp.replace(/\D/g, '');
 const contactEmail =

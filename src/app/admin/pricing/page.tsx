@@ -16,8 +16,8 @@ export default function AdminPricingPage() {
   const [pricing, setPricing] = useState<PricingData>({
     name: 'Standard Shikara',
     currentPrice: 600,
-    originalPrice: 650,
-    offerActive: true,
+    originalPrice: null,
+    offerActive: false,
     capacity: 6,
     description:
       'One boat · Up to 6 people. Rates are for the entire private Shikara boat. Price may vary depending on the boat and group requirements.',
@@ -35,7 +35,7 @@ export default function AdminPricingPage() {
           setPricing({
             name: data.name || 'Standard Shikara',
             currentPrice: data.currentPrice ?? 600,
-            originalPrice: data.originalPrice ?? 650,
+            originalPrice: data.originalPrice ?? null,
             offerActive: Boolean(data.offerActive),
             capacity: data.capacity ?? 6,
             description: data.description || '',
@@ -172,7 +172,7 @@ export default function AdminPricingPage() {
                     originalPrice: e.target.value ? parseInt(e.target.value, 10) : null,
                   })
                 }
-                placeholder="650"
+                placeholder="e.g. 700"
                 className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-forest-700 text-slate-900"
               />
             </div>

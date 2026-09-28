@@ -72,8 +72,8 @@ const PricingSchema = new Schema<IPricing>(
   {
     name: { type: String, required: true, default: 'Standard Shikara' },
     currentPrice: { type: Number, required: true, default: 600 },
-    originalPrice: { type: Number, default: 650 },
-    offerActive: { type: Boolean, default: true },
+    originalPrice: { type: Number, default: null },
+    offerActive: { type: Boolean, default: false },
     capacity: { type: Number, default: 6 },
     description: {
       type: String,
@@ -177,8 +177,8 @@ export const DEFAULT_PRICING: {
 } = {
   name: 'Standard Shikara',
   currentPrice: 600,
-  originalPrice: 650,
-  offerActive: true,
+  originalPrice: null,
+  offerActive: false,
   capacity: 6,
   description:
     'One boat · Up to 6 people. Rates are for the entire private Shikara boat. Price may vary depending on the boat and group requirements.',

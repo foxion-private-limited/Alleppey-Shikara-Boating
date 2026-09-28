@@ -152,7 +152,7 @@ export default function RootLayout({
         '@type': 'Offer',
         name: 'Standard Shikara Boating (Hourly)',
         description:
-          'Private Shikara boat ride for up to 6 people through Alleppey backwaters (Current offer: ₹600/hr, Regular: ₹650/hr)',
+          'Private Shikara boat ride for up to 6 people through Alleppey backwaters',
         price: '600',
         priceCurrency: 'INR',
         availability: 'https://schema.org/InStock',

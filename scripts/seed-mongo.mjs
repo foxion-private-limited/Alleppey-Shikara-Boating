@@ -21,8 +21,8 @@ const PricingSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, default: 'Standard Shikara' },
     currentPrice: { type: Number, required: true, default: 600 },
-    originalPrice: { type: Number, default: 650 },
-    offerActive: { type: Boolean, default: true },
+    originalPrice: { type: Number, default: null },
+    offerActive: { type: Boolean, default: false },
     capacity: { type: Number, default: 6 },
     description: {
       type: String,
@@ -55,8 +55,8 @@ const Package = mongoose.models.Package || mongoose.model('Package', PackageSche
 const DEFAULT_PRICING = {
   name: 'Standard Shikara',
   currentPrice: 600,
-  originalPrice: 650,
-  offerActive: true,
+  originalPrice: null,
+  offerActive: false,
   capacity: 6,
   description:
     'One boat · Up to 6 people. Rates are for the entire private Shikara boat. Price may vary depending on the boat and group requirements.',
@@ -120,7 +120,10 @@ async function runSeed() {
       const createdPricing = await Pricing.create(DEFAULT_PRICING);
       console.log('Created initial Pricing in MongoDB:', createdPricing._id);
     } else {
-      console.log('Existing Pricing found in MongoDB:', existingPricing);
+      existingPricing.originalPrice = null;
+      existingPricing.offerActive = false;
+      await existingPricing.save();
+      console.log('Updated existing Pricing in MongoDB to base rate ₹600 without previous offer rate:', existingPricing);
     }
 
     // 2. Seed Packages

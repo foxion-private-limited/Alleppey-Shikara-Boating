@@ -35,8 +35,8 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
   const [standardPricing, setStandardPricing] = useState<PricingData>({
     name: 'Standard Shikara',
     currentPrice: 600,
-    originalPrice: 650,
-    offerActive: true,
+    originalPrice: null,
+    offerActive: false,
     capacity: 6,
     description:
       'One boat · Up to 6 people. Price may vary depending on the boat and group requirements.',
@@ -53,8 +53,8 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
           setStandardPricing({
             name: data.name || 'Standard Shikara',
             currentPrice: data.currentPrice ?? 600,
-            originalPrice: data.originalPrice ?? 650,
-            offerActive: Boolean(data.offerActive),
+            originalPrice: null,
+            offerActive: false,
             capacity: data.capacity ?? 6,
             description: data.description || '',
           });
@@ -79,20 +79,6 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
     )}`;
     window.open(url, '_blank');
   };
-
-  // Standard Shikara Offer Calculation
-  const hasStandardOffer =
-    standardPricing.offerActive &&
-    standardPricing.originalPrice &&
-    standardPricing.originalPrice > standardPricing.currentPrice;
-
-  const standardDiscount = hasStandardOffer
-    ? Math.round(
-        ((standardPricing.originalPrice! - standardPricing.currentPrice) /
-          standardPricing.originalPrice!) *
-          100
-      )
-    : 0;
 
   return (
     <section id="pricing" className="py-24 bg-cream-50/60 border-b border-forest-900/10">
@@ -130,34 +116,14 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
                 <span>Up to {standardPricing.capacity} people</span>
               </div>
 
-              {/* Price display with explicit, unambiguous offer presentation */}
+              {/* Clean Base Rate Price Display */}
               <div className="mb-4 pb-4 border-b border-forest-100">
-                {hasStandardOffer ? (
-                  <div className="space-y-1">
-                    <div className="flex items-baseline space-x-2">
-                      <span className="font-serif text-3xl sm:text-4xl font-semibold text-forest-950">
-                        ₹{standardPricing.currentPrice}
-                      </span>
-                      <span className="text-xs text-earth-700 font-medium">/ hour</span>
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider">
-                        {standardDiscount}% OFF
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-1.5 text-xs text-earth-600 font-light">
-                      <span>Original price:</span>
-                      <span className="line-through text-earth-500 font-normal">
-                        ₹{standardPricing.originalPrice}/hour
-                      </span>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="flex items-baseline space-x-2">
-                    <span className="font-serif text-3xl sm:text-4xl font-semibold text-forest-950">
-                      ₹{standardPricing.currentPrice}
-                    </span>
-                    <span className="text-xs text-earth-700 font-medium">/ hour</span>
-                  </div>
-                )}
+                <div className="flex items-baseline space-x-2">
+                  <span className="font-serif text-3xl sm:text-4xl font-semibold text-forest-950">
+                    ₹{standardPricing.currentPrice}
+                  </span>
+                  <span className="text-xs text-earth-700 font-medium">/ hour</span>
+                </div>
               </div>
 
               <p className="text-xs text-earth-800 font-light leading-relaxed mb-6">
