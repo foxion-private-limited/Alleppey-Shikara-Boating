@@ -12,10 +12,12 @@ import {
   Menu,
   X,
   LayoutDashboard,
+  MessageSquareQuote,
 } from 'lucide-react';
 
 const navItems = [
   { label: 'Overview', href: '/admin', icon: LayoutDashboard },
+  { label: 'Guest Reviews', href: '/admin/reviews', icon: MessageSquareQuote },
   { label: 'Pricing & Offers', href: '/admin/pricing', icon: Tag },
   { label: 'Packages', href: '/admin/packages', icon: Package },
 ];

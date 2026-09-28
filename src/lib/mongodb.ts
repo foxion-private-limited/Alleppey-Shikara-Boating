@@ -126,6 +126,43 @@ export const PackageModel: Model<IPackage> =
   mongoose.models.Package || mongoose.model<IPackage>('Package', PackageSchema);
 
 /* =========================================================================
+   3. REVIEW MODEL
+   ========================================================================= */
+
+export type ReviewStatus = 'pending' | 'approved' | 'rejected';
+
+export interface IReview extends Document {
+  name: string;
+  review: string;
+  rating?: number | null;
+  status: ReviewStatus;
+  historicalId?: string | null;
+  isHistorical: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+const ReviewSchema = new Schema<IReview>(
+  {
+    name: { type: String, required: true, trim: true, default: 'Guest' },
+    review: { type: String, required: true, trim: true },
+    rating: { type: Number, default: null, min: 1, max: 5 },
+    status: {
+      type: String,
+      enum: ['pending', 'approved', 'rejected'],
+      default: 'pending',
+      index: true,
+    },
+    historicalId: { type: String, default: null, sparse: true },
+    isHistorical: { type: Boolean, default: false },
+  },
+  { timestamps: true }
+);
+
+export const ReviewModel: Model<IReview> =
+  mongoose.models.Review || mongoose.model<IReview>('Review', ReviewSchema);
+
+/* =========================================================================
    DEFAULT SEED DATA & IN-MEMORY FALLBACK (Ensures Zero-Downtime Reliability)
    ========================================================================= */
 
@@ -194,7 +231,40 @@ export const DEFAULT_PACKAGES = [
   },
 ];
 
-// Seed default data if database is empty
+export const HISTORICAL_REVIEWS = [
+  {
+    historicalId: 'hist-review-1',
+    name: 'Beema Noushad',
+    review:
+      'Alleppey village shikkara boating is highly recommend by myself, because it is very good and budget friendly,we feeled the beauty of nature with calm and quiet atmosphere.the reality of boating was fully feeled in Alleppey village shikkara boating,the behaviour of the staffs and owner was very good and polite..',
+    rating: null,
+    status: 'approved' as ReviewStatus,
+    isHistorical: true,
+    createdAt: new Date('2025-01-10T10:00:00.000Z'),
+  },
+  {
+    historicalId: 'hist-review-2',
+    name: 'Dhanashree Indulkar',
+    review:
+      'We took shikara boating in morning sunrise time. Experience was very good with the driver(sijo). Saw best view of first sunrise of 2025.\nBoat also was clean and well maintained. Mr. Sijo guided us very well, He also clicks very nice couple photos if anyone wants.',
+    rating: null,
+    status: 'approved' as ReviewStatus,
+    isHistorical: true,
+    createdAt: new Date('2025-01-01T08:30:00.000Z'),
+  },
+  {
+    historicalId: 'hist-review-3',
+    name: 'Guest',
+    review:
+      'Came for morning shikara boat ride and it was amazing, Sijo was great driver and also a very good photographer who clicked a lot of our photos. Even though we were half an hour late we were able to complete the ride on time. One of the budget friendly ride in the area, had a lovely experience and you will also get to click pictures with eagle.',
+    rating: null,
+    status: 'approved' as ReviewStatus,
+    isHistorical: true,
+    createdAt: new Date('2025-01-20T11:00:00.000Z'),
+  },
+];
+
+// Seed default data if database is empty or missing historical items
 export async function seedDefaultsIfEmpty() {
   try {
     const conn = await connectToDatabase();
@@ -209,7 +279,18 @@ export async function seedDefaultsIfEmpty() {
     if (packageCount === 0) {
       await PackageModel.insertMany(DEFAULT_PACKAGES.map(({ _id, ...pkg }) => pkg));
     }
+
+    // Seed historical reviews deterministically and idempotently
+    for (const hr of HISTORICAL_REVIEWS) {
+      const exists = await ReviewModel.findOne({
+        $or: [{ historicalId: hr.historicalId }, { review: hr.review }],
+      });
+      if (!exists) {
+        await ReviewModel.create(hr);
+      }
+    }
   } catch (err) {
     console.warn('Seed notice:', err);
   }
 }
+

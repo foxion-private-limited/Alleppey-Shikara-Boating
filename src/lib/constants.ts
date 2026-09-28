@@ -48,6 +48,7 @@ export const NAV_LINKS = [
   { label: 'Food', href: '#food' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Experiences', href: '#experiences' },
+  { label: 'Reviews', href: '#reviews' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Location', href: '#location' },
 ];

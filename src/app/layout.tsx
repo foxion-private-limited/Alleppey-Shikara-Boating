@@ -131,6 +131,12 @@ export default function RootLayout({
       {
         '@type': 'ListItem',
         position: 5,
+        name: 'Reviews',
+        item: 'https://alleppeyvillageshikaraboating.com/#reviews',
+      },
+      {
+        '@type': 'ListItem',
+        position: 6,
         name: 'Location',
         item: 'https://alleppeyvillageshikaraboating.com/#location',
       },
