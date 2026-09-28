@@ -42,13 +42,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Alleppey Village Shikara Boating' }],
   alternates: {
-    canonical: `${baseUrl}/`,
+    canonical: `${baseUrl}`,
   },
   openGraph: {
     title: 'Alleppey Shikara Boating | Alappuzha Backwater Tours',
     description:
       'Experience authentic Shikara boating through tranquil village canals, lush paddy fields, and serene backwaters in Alappuzha (Alleppey), Kerala. Private sunrise & sunset tours.',
-    url: `${baseUrl}/`,
+    url: `${baseUrl}`,
     siteName: 'Alleppey Village Shikara Boating',
     images: [
       {
@@ -99,7 +99,7 @@ export default function RootLayout({
     ],
     description:
       'Authentic private Shikara boat cruises, village canal tours, and sunrise/sunset backwater rides in Alappuzha (Alleppey), Kerala, India.',
-    url: `${baseUrl}/`,
+    url: `${baseUrl}`,
     telephone: BUSINESS_CONFIG.contact.phone,
     email: BUSINESS_CONFIG.contact.email,
     priceRange: '₹600 - ₹3500',
@@ -152,7 +152,7 @@ export default function RootLayout({
         '@type': 'Offer',
         name: 'Standard Shikara Boating (Hourly)',
         description:
-          'Private Shikara boat ride for up to 6 people through Alleppey backwaters',
+          'Private Shikara boat ride for up to 6 people through Alleppey backwaters (Current offer: ₹600/hr, Regular: ₹650/hr)',
         price: '600',
         priceCurrency: 'INR',
         availability: 'https://schema.org/InStock',
@@ -176,7 +176,7 @@ export default function RootLayout({
     '@id': `${baseUrl}/#website`,
     name: 'Alleppey Village Shikara Boating',
     alternateName: 'Alleppey Shikara Boating',
-    url: `${baseUrl}/`,
+    url: `${baseUrl}`,
   };
 
   return (

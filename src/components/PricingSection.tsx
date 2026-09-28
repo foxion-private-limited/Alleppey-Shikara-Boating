@@ -130,24 +130,32 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
                 <span>Up to {standardPricing.capacity} people</span>
               </div>
 
-              {/* Price display with dynamic offer calculation */}
+              {/* Price display with explicit, unambiguous offer presentation */}
               <div className="mb-4 pb-4 border-b border-forest-100">
-                <div className="flex items-baseline space-x-2">
-                  <span className="font-serif text-3xl sm:text-4xl font-semibold text-forest-950">
-                    ₹{standardPricing.currentPrice}
-                  </span>
-                  <span className="text-xs text-earth-700 font-medium">/ hour</span>
-                </div>
-
-                {/* Only show crossed-out price and discount badge when offer is active */}
-                {hasStandardOffer && (
-                  <div className="flex items-center space-x-2 mt-1.5">
-                    <span className="text-sm text-earth-500 line-through">
-                      ₹{standardPricing.originalPrice}
+                {hasStandardOffer ? (
+                  <div className="space-y-1">
+                    <div className="flex items-baseline space-x-2">
+                      <span className="font-serif text-3xl sm:text-4xl font-semibold text-forest-950">
+                        ₹{standardPricing.currentPrice}
+                      </span>
+                      <span className="text-xs text-earth-700 font-medium">/ hour</span>
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider">
+                        {standardDiscount}% OFF
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-1.5 text-xs text-earth-600 font-light">
+                      <span>Original price:</span>
+                      <span className="line-through text-earth-500 font-normal">
+                        ₹{standardPricing.originalPrice}/hour
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex items-baseline space-x-2">
+                    <span className="font-serif text-3xl sm:text-4xl font-semibold text-forest-950">
+                      ₹{standardPricing.currentPrice}
                     </span>
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider">
-                      {standardDiscount}% OFF
-                    </span>
+                    <span className="text-xs text-earth-700 font-medium">/ hour</span>
                   </div>
                 )}
               </div>
@@ -217,24 +225,37 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
                   </div>
 
                   <div className="mb-4 pb-4 border-b border-forest-100">
-                    <div className="flex items-baseline space-x-2">
-                      <span className="font-serif text-3xl sm:text-4xl font-semibold text-forest-950">
-                        ₹{pkg.price}
-                      </span>
-                      <span className="text-xs text-earth-700 font-medium">
-                        {pkg.duration.toLowerCase().includes('custom')
-                          ? '/ hour'
-                          : 'ride'}
-                      </span>
-                    </div>
-
-                    {hasOffer && (
-                      <div className="flex items-center space-x-2 mt-1.5">
-                        <span className="text-sm text-earth-500 line-through">
-                          ₹{pkg.originalPrice}
+                    {hasOffer ? (
+                      <div className="space-y-1">
+                        <div className="flex items-baseline space-x-2">
+                          <span className="font-serif text-3xl sm:text-4xl font-semibold text-forest-950">
+                            ₹{pkg.price}
+                          </span>
+                          <span className="text-xs text-earth-700 font-medium">
+                            {pkg.duration.toLowerCase().includes('custom')
+                              ? '/ hour'
+                              : 'ride'}
+                          </span>
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider">
+                            {discount}% OFF
+                          </span>
+                        </div>
+                        <div className="flex items-center space-x-1.5 text-xs text-earth-600 font-light">
+                          <span>Original price:</span>
+                          <span className="line-through text-earth-500 font-normal">
+                            ₹{pkg.originalPrice}
+                          </span>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex items-baseline space-x-2">
+                        <span className="font-serif text-3xl sm:text-4xl font-semibold text-forest-950">
+                          ₹{pkg.price}
                         </span>
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider">
-                          {discount}% OFF
+                        <span className="text-xs text-earth-700 font-medium">
+                          {pkg.duration.toLowerCase().includes('custom')
+                            ? '/ hour'
+                            : 'ride'}
                         </span>
                       </div>
                     )}

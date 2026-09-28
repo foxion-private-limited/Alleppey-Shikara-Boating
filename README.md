@@ -107,7 +107,7 @@ Alleppey_Shikara/
 - **`FoodSection.tsx`**: Highlights authentic culinary offerings (Kerala Breakfast, Banana-Leaf Sadya, Fresh Seafood Karimeen Pollichathu, Tapioca & Toddy).
 - **`Experiences.tsx`**: Features specialized cruise timings (Sunrise Cruise 6:00–9:00 AM, Village Backwater Cruise, Sunset Cruise 4:30–6:30 PM).
 - **`FeaturedExperience.tsx`**: Showcases combination options including Shikara boating, canoeing, kayaking, open boating, and speed boating.
-- **`PricingSection.tsx`**: Displays real-time hourly base rates (starting at ₹600/hr for up to 6 people) and package rates pulled from MongoDB with graceful static fallbacks.
+- **`PricingSection.tsx`**: Displays transparent and unambiguous hourly base rates (active offer price of ₹600/hr, clearly displaying original price of ₹650/hr with an 8% OFF badge, for the private boat up to 6 people) and dynamic package rates pulled from MongoDB with graceful static fallbacks and synchronized schema.
 - **`WhyChooseUs.tsx`**: Emphasizes local knowledge, authenticity, comfortable cushioned seating, and personalized private hosting.
 - **`Gallery.tsx`**: Curated 4-photo asymmetrical editorial grid on the homepage linking directly to `/gallery`.
 - **`Testimonials.tsx`**: Real guest reflections fetched from the database, featuring a review submission modal with honeypot spam protection.
