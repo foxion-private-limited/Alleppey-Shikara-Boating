@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
+import { getBaseUrl } from '@/lib/siteUrl';
+import { BUSINESS_CONFIG } from '@/lib/constants';
+
+const baseUrl = getBaseUrl();
 
 const serifFont = Playfair_Display({
   subsets: ['latin'],
@@ -17,30 +21,34 @@ const sansFont = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Alleppey Village Shikara Boating | Alappuzha Backwater Tours',
+  metadataBase: new URL(baseUrl),
+  title: 'Alleppey Shikara Boating | Alappuzha Backwater Tours',
   description:
-    'Experience authentic Shikara boating through peaceful village canals, lush paddy fields, and serene backwaters in Alappuzha (Alleppey), Kerala. Private and small-group scenic tours.',
+    'Book authentic Alleppey Shikara boating through peaceful Alappuzha backwaters, narrow village canals, and Vembanad Lake. Private sunrise, sunset, and 2 to 3-hour rides from ₹600/hr.',
   keywords: [
-    'Alleppey Shikara boating',
-    'Alappuzha Shikara boating',
-    'Alleppey backwater tour',
-    'Kerala village backwater experience',
-    'Alappuzha boating',
-    'Shikara boat ride Alleppey',
-    'Alleppey village boating',
-    'private Shikara Alappuzha',
+    'Alleppey Shikara Boating',
+    'Shikara Boating Alleppey',
+    'Alappuzha Shikara Boating',
+    'Alleppey Shikara Boat',
+    'Alleppey Backwater Boat Ride',
+    'Shikara Boat Ride Alleppey',
+    'Alleppey Shikara Boating Price',
+    'Sunrise Shikara Ride Alleppey',
+    'Sunset Shikara Ride Alleppey',
+    'Village Shikara Ride Alleppey',
+    'Alappuzha Backwater Tours',
+    'Vembanad Lake boating',
     'Kerala backwaters',
   ],
   authors: [{ name: 'Alleppey Village Shikara Boating' }],
-  metadataBase: new URL('https://alleppeyvillageshikaraboating.com'),
   alternates: {
-    canonical: 'https://alleppeyvillageshikaraboating.com/',
+    canonical: `${baseUrl}/`,
   },
   openGraph: {
-    title: 'Alleppey Village Shikara Boating | Authentic Kerala Backwater Tours',
+    title: 'Alleppey Shikara Boating | Alappuzha Backwater Tours',
     description:
-      'Glide through peaceful village canals, lush paddy fields, and palm-lined waterways aboard a traditional Shikara in Alappuzha (Alleppey), Kerala.',
-    url: 'https://alleppeyvillageshikaraboating.com/',
+      'Experience authentic Shikara boating through tranquil village canals, lush paddy fields, and serene backwaters in Alappuzha (Alleppey), Kerala. Private sunrise & sunset tours.',
+    url: `${baseUrl}/`,
     siteName: 'Alleppey Village Shikara Boating',
     images: [
       {
@@ -55,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Alleppey Village Shikara Boating | Alappuzha Backwater Tours',
+    title: 'Alleppey Shikara Boating | Alappuzha Backwater Tours',
     description:
-      'Cruise peaceful village canals and palm-lined waterways aboard a traditional Shikara in Alleppey, Kerala.',
+      'Cruise peaceful village canals, lush paddy fields, and palm-lined waterways aboard a traditional Shikara in Alleppey, Kerala.',
     images: ['/images/hero-shikara.jpg'],
   },
   robots: {
@@ -79,115 +87,96 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   // Structured Data (JSON-LD)
-  // LocalBusiness, BreadcrumbList & FAQPage
   const localBusinessJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'TouristAttraction',
+    '@type': ['TouristAttraction', 'LocalBusiness', 'TravelAgency'],
+    '@id': `${baseUrl}/#business`,
     name: 'Alleppey Village Shikara Boating',
-    alternateName: 'Alappuzha Village Shikara Boating',
+    alternateName: [
+      'Alleppey Shikara Boating',
+      'Alappuzha Shikara Boating',
+      'Alleppey Village Shikara',
+    ],
     description:
-      'Authentic Shikara boat cruises and village backwater experiences in Alappuzha (Alleppey), Kerala, India.',
-    url: 'https://alleppeyvillageshikaraboating.com/',
-    image: 'https://alleppeyvillageshikaraboating.com/images/hero-shikara.jpg',
+      'Authentic private Shikara boat cruises, village canal tours, and sunrise/sunset backwater rides in Alappuzha (Alleppey), Kerala, India.',
+    url: `${baseUrl}/`,
+    telephone: BUSINESS_CONFIG.contact.phone,
+    email: BUSINESS_CONFIG.contact.email,
+    priceRange: '₹600 - ₹3500',
+    currenciesAccepted: 'INR',
+    paymentAccepted: 'Cash, UPI, Credit Card, Debit Card',
+    image: [
+      `${baseUrl}/images/hero-shikara.jpg`,
+      `${baseUrl}/images/village-canal.jpg`,
+      `${baseUrl}/images/sunset-cruise.jpg`,
+    ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, Vazhicherry Ward',
+      streetAddress:
+        'Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, Vazhicherry Ward',
       addressLocality: 'Alappuzha',
       addressRegion: 'Kerala',
       postalCode: '688005',
       addressCountry: 'IN',
     },
-    touristType: ['Foreign tourists', 'Couples', 'Families', 'Solo travelers'],
-  };
-
-  const breadcrumbsJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 9.4981,
+      longitude: 76.3388,
+    },
+    hasMap: BUSINESS_CONFIG.location.mapsUrl,
+    openingHoursSpecification: [
       {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: 'https://alleppeyvillageshikaraboating.com/',
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+          'Sunday',
+        ],
+        opens: '06:00',
+        closes: '18:30',
+      },
+    ],
+    touristType: ['Couples', 'Families', 'Foreign tourists', 'Solo travelers'],
+    areaServed: [
+      { '@type': 'AdministrativeArea', name: 'Alappuzha' },
+      { '@type': 'AdministrativeArea', name: 'Alleppey' },
+      { '@type': 'AdministrativeArea', name: 'Kerala' },
+    ],
+    makesOffer: [
+      {
+        '@type': 'Offer',
+        name: 'Standard Shikara Boating (Hourly)',
+        description:
+          'Private Shikara boat ride for up to 6 people through Alleppey backwaters',
+        price: '600',
+        priceCurrency: 'INR',
+        availability: 'https://schema.org/InStock',
+        validFrom: '2025-01-01',
       },
       {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Routes',
-        item: 'https://alleppeyvillageshikaraboating.com/#routes',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Pricing',
-        item: 'https://alleppeyvillageshikaraboating.com/#pricing',
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: 'Food',
-        item: 'https://alleppeyvillageshikaraboating.com/#food',
-      },
-      {
-        '@type': 'ListItem',
-        position: 5,
-        name: 'Reviews',
-        item: 'https://alleppeyvillageshikaraboating.com/#reviews',
-      },
-      {
-        '@type': 'ListItem',
-        position: 6,
-        name: 'Location',
-        item: 'https://alleppeyvillageshikaraboating.com/#location',
+        '@type': 'Offer',
+        name: '3 Hour Backwater Experience',
+        description:
+          'Recommended 3-hour cruise covering Vembanad Lake, village walking, paddy fields, and narrow canals',
+        price: '1800',
+        priceCurrency: 'INR',
+        availability: 'https://schema.org/InStock',
       },
     ],
   };
 
-  const faqJsonLd = {
+  const webSiteJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'What is the best time for a Shikara ride in Alappuzha?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Early mornings (around 6:00 AM to 9:00 AM) and late afternoons (around 4:30 PM to 6:30 PM) offer the most pleasant weather, gentle light, and tranquil waters.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'How long does a typical boat ride take?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Most visitors choose between 2-hour and 3-hour rides. We especially recommend the 3-hour voyage for a balanced experience of lakes, village walks, and narrow canals.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Can couples book a private Shikara?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes, private Shikara bookings are standard and popular for couples seeking a peaceful, romantic experience with comfortable cushioned seating.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Is Shikara boating suitable for families with children?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes, Shikara boats are covered with a shaded canopy and offer comfortable seating, making them well-suited for families of all ages.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Where does the boat ride start?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Rides depart from our designated boarding point at Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, Vazhicherry Ward, Alappuzha, Kerala, 688005.',
-        },
-      },
-    ],
+    '@type': 'WebSite',
+    '@id': `${baseUrl}/#website`,
+    name: 'Alleppey Village Shikara Boating',
+    alternateName: 'Alleppey Shikara Boating',
+    url: `${baseUrl}/`,
   };
 
   return (
@@ -199,11 +188,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
         />
       </head>
       <body className="bg-cream-50 text-forest-950 font-sans antialiased selection:bg-forest-800 selection:text-cream-100">

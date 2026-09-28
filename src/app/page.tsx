@@ -18,6 +18,7 @@ import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import BookingModal from '@/components/BookingModal';
 import { ExperienceItem } from '@/components/ExperienceCard';
+import { FAQ_ITEMS } from '@/lib/faqData';
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -84,6 +85,25 @@ export default function Home() {
 
         {/* 13. Frequently Asked Questions */}
         <FAQ />
+
+        {/* FAQPage Structured Data (only on page where FAQ is visible) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: FAQ_ITEMS.map((item) => ({
+                '@type': 'Question',
+                name: item.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: item.answer,
+                },
+              })),
+            }),
+          }}
+        />
       </main>
 
       {/* 14. Warm Sunset Footer with Exact Address & Foxion Credit */}

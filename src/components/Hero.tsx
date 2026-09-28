@@ -34,13 +34,13 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         </div>
 
         {/* Main Heading (Only single H1 on page as required) */}
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] text-cream-50 font-normal leading-[1.15] sm:leading-[1.12] tracking-tight mb-6 max-w-3xl mx-auto drop-shadow-sm">
-          Discover the Hidden Beauty of Kerala&apos;s Backwaters
+        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[3.75rem] text-cream-50 font-normal leading-[1.15] sm:leading-[1.12] tracking-tight mb-6 max-w-4xl mx-auto drop-shadow-sm">
+          Alleppey Shikara Boating – Explore the Alappuzha Backwaters
         </h1>
 
         {/* Supporting Text */}
         <p className="text-base sm:text-lg md:text-xl text-cream-100/90 font-light leading-relaxed max-w-2xl mx-auto mb-10 text-balance">
-          Cruise through peaceful village canals, lush paddy fields and palm-lined waterways aboard a traditional Shikara in Alleppey.
+          Discover the hidden beauty of Kerala&apos;s backwaters. Cruise through peaceful village canals, lush paddy fields, and palm-lined waterways aboard an authentic traditional Shikara.
         </p>
 
         {/* Action Buttons */}

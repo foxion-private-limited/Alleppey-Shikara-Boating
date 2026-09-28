@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import GalleryView from './GalleryView';
 import { getServerGalleryPhotos } from '@/lib/serverGallery';
+import { getBaseUrl } from '@/lib/siteUrl';
+
+const baseUrl = getBaseUrl();
 
 export const metadata: Metadata = {
   title: 'Photo Gallery | Alleppey Village Shikara Boating',
@@ -15,13 +18,13 @@ export const metadata: Metadata = {
     'Vembanad Lake photos',
   ],
   alternates: {
-    canonical: 'https://alleppeyvillageshikaraboating.com/gallery',
+    canonical: `${baseUrl}/gallery`,
   },
   openGraph: {
     title: 'Photo Gallery | Alleppey Village Shikara Boating',
     description:
       'Explore photographic glimpses of authentic Shikara boat cruises, tranquil backwater canals, and golden sunsets in Alappuzha, Kerala.',
-    url: 'https://alleppeyvillageshikaraboating.com/gallery',
+    url: `${baseUrl}/gallery`,
     siteName: 'Alleppey Village Shikara Boating',
     images: [
       {
@@ -52,11 +55,30 @@ export default function GalleryPage() {
     name: 'Alleppey Village Shikara Boating Photo Gallery',
     description:
       'Photographic collection of authentic Shikara boating journeys through the village backwaters of Alappuzha, Kerala.',
-    url: 'https://alleppeyvillageshikaraboating.com/gallery',
+    url: `${baseUrl}/gallery`,
     provider: {
       '@type': 'TouristAttraction',
       name: 'Alleppey Village Shikara Boating',
     },
+  };
+
+  const breadcrumbsJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: `${baseUrl}/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Gallery',
+        item: `${baseUrl}/gallery`,
+      },
+    ],
   };
 
   return (
@@ -64,6 +86,10 @@ export default function GalleryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsJsonLd) }}
       />
       <GalleryView initialPhotos={photos} />
     </>

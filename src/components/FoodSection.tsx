@@ -32,7 +32,7 @@ const foodExperiences = [
     category: "Traditional Kerala Experience",
     description:
       "Experience a traditional Kerala combination of soft tapioca with locally enjoyed toddy.",
-    image: "/images/food-tapioca.png",
+    image: "/images/food-tapioca.jpg",
   },
 ];
 

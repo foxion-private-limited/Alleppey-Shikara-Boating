@@ -299,9 +299,9 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
               <span className="text-xs uppercase tracking-widest font-semibold text-gold-400 mb-1.5 block">
                 Tailored Itineraries
               </span>
-              <h4 className="font-serif text-2xl sm:text-3xl text-cream-50 font-normal mb-2">
+              <h3 className="font-serif text-2xl sm:text-3xl text-cream-50 font-normal mb-2">
                 Want More Time?
-              </h4>
+              </h3>
               <p className="text-sm text-cream-100/90 font-light leading-relaxed">
                 Custom durations are also available for guests who want to explore at their own pace. Trips longer than 3 hours can be arranged on request. While 3 hours remains our recommended option for a balanced experience, we are happy to craft a flexible schedule for your group.
               </p>

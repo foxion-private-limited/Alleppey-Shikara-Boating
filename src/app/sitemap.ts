@@ -1,55 +1,22 @@
 import { MetadataRoute } from 'next';
+import { getBaseUrl } from '@/lib/siteUrl';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://alleppeyvillageshikaraboating.com';
+  const baseUrl = getBaseUrl();
+  const currentDate = new Date();
+
   return [
     {
-      url: `${baseUrl}/`,
-      lastModified: new Date(),
+      url: `${baseUrl}`,
+      lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/#routes`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/#food`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+      url: `${baseUrl}/gallery`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
       priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#pricing`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/#experiences`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#gallery`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/#location`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#faq`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
     },
   ];
 }

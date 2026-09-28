@@ -1,9 +1,11 @@
+import { getBaseUrl } from './siteUrl';
+
 /**
  * Centralized business configuration and placeholders
  * Designed to easily update with real contact & booking information.
  */
 
-const rawWhatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+916282995964';
+const rawWhatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+919562627451';
 const cleanWhatsappDigits = rawWhatsapp.replace(/\D/g, '');
 const contactEmail =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL ||
@@ -14,7 +16,7 @@ export const BUSINESS_CONFIG = {
   name: 'Alleppey Village Shikara Boating',
   shortName: 'Alleppey Shikara',
   tagline: 'Authentic Kerala Backwater Experiences',
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://alleppeyvillageshikaraboating.com',
+  siteUrl: getBaseUrl(),
   location: {
     exactAddress: 'Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, Vazhicherry Ward, Alappuzha, Kerala, 688005',
     street: 'Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, Vazhicherry Ward',
