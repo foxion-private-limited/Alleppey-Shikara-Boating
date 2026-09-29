@@ -69,13 +69,19 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             className="group flex items-center space-x-2.5 sm:space-x-3 focus:outline-none"
             aria-label="Alleppey Village Shikara Boating Home"
           >
-            <div className="relative w-9 h-9 sm:w-10 sm:h-10 shrink-0 overflow-hidden rounded-full border border-white/25 bg-white/10 backdrop-blur-sm shadow-sm transition-transform duration-300 group-hover:scale-105">
+            <div
+              className={`relative w-9 h-9 sm:w-10 sm:h-10 shrink-0 overflow-hidden rounded-full transition-all duration-300 group-hover:scale-105 shadow-sm ${
+                isScrolled
+                  ? 'border border-forest-900/15 bg-white/90'
+                  : 'border border-white/30 bg-white/15 backdrop-blur-sm'
+              }`}
+            >
               <Image
                 src="/logo.png"
                 alt="Alleppey Village Shikara Boating logo"
                 width={40}
                 height={40}
-                className="w-full h-full object-contain p-0.5"
+                className="w-full h-full object-contain"
                 priority
               />
             </div>

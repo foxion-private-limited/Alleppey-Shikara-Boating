@@ -37,7 +37,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: 'Where does the boat ride start?',
     answer:
-      'Our boat rides depart from our primary boarding point at Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, Vazhicherry Ward, Alappuzha (Alleppey), Kerala 688005. The location is easily accessible by auto-rickshaw, taxi, or car with nearby parking.',
+      'Our boat rides depart from our primary boarding point at Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, near Sea View Ward, Vazhicherry Ward, Alappuzha (Alleppey), Kerala 688001. The location is easily accessible by auto-rickshaw, taxi, or car with nearby parking.',
   },
   {
     question: 'Do you offer sunrise Shikara rides?',

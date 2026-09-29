@@ -44,6 +44,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${baseUrl}`,
   },
+  icons: {
+    icon: [
+      { url: '/logo.png', type: 'image/png' },
+    ],
+    shortcut: '/logo.png',
+    apple: [
+      { url: '/logo.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     title: 'Alleppey Shikara Boating | Alappuzha Backwater Tours',
     description:
@@ -100,6 +109,7 @@ export default function RootLayout({
     description:
       'Authentic private Shikara boat cruises, village canal tours, and sunrise/sunset backwater rides in Alappuzha (Alleppey), Kerala, India.',
     url: `${baseUrl}`,
+    logo: `${baseUrl}/logo.png`,
     telephone: BUSINESS_CONFIG.contact.phone,
     email: BUSINESS_CONFIG.contact.email,
     priceRange: '₹600 - ₹3500',
@@ -113,16 +123,16 @@ export default function RootLayout({
     address: {
       '@type': 'PostalAddress',
       streetAddress:
-        'Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, Vazhicherry Ward',
+        'Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, near Sea View Ward, Vazhicherry Ward',
       addressLocality: 'Alappuzha',
       addressRegion: 'Kerala',
-      postalCode: '688005',
+      postalCode: '688001',
       addressCountry: 'IN',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 9.4981,
-      longitude: 76.3388,
+      latitude: 9.5001983,
+      longitude: 76.3414791,
     },
     hasMap: BUSINESS_CONFIG.location.mapsUrl,
     openingHoursSpecification: [

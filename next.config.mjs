@@ -14,6 +14,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/favicon.ico',
+        destination: '/logo.png',
+      },
+    ];
+  },
   async redirects() {
     return [
       {

@@ -60,7 +60,7 @@ export default function Footer() {
                   alt="Alleppey Village Shikara Boating logo"
                   width={40}
                   height={40}
-                  className="w-full h-full object-contain p-0.5"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <span className="font-serif text-xl font-semibold text-cream-50">
@@ -142,10 +142,10 @@ export default function Footer() {
                 near AG &amp; P Pratham Indian Oil and CNG Station,
               </p>
               <p>
-                Vazhicherry Ward,
+                near Sea View Ward, Vazhicherry Ward,
               </p>
               <p>
-                Alappuzha, Kerala 688005
+                Alappuzha, Kerala 688001
               </p>
             </div>
 

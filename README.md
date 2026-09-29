@@ -227,12 +227,12 @@ The content and technical architecture are specifically targeted around the foll
 
 - **Business Name**: Alleppey Village Shikara Boating
 - **Boarding Point & Address**:
-  - Street: Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, Vazhicherry Ward
+  - Street: Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, near Sea View Ward, Vazhicherry Ward
   - City: Alappuzha (Alleppey)
   - State: Kerala
-  - Postal Code: 688005
+  - Postal Code: 688001
   - Country: India
-- **Coordinates**: Latitude `9.4981`, Longitude `76.3388`
+- **Coordinates**: Latitude `9.5001983`, Longitude `76.3414791`
 - **Operating Hours**: Monday – Sunday, 6:00 AM – 6:30 PM IST
 - **Contact Details**: WhatsApp & Phone configured via environment variables
 - **Service Area**: Alappuzha, Alleppey, Punnamada Lake, Vembanad Lake, Kuttanad Backwaters, Kerala
@@ -396,7 +396,7 @@ Whenever making changes in the future, adhere to the following checklist:
 ## 16. Important Business Information
 
 - **Business**: Alleppey Village Shikara Boating
-- **Location**: Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, Vazhicherry Ward, Alappuzha, Kerala, 688005
+- **Location**: Vazhichery Jn, near AG & P Pratham Indian Oil and CNG Station, near Sea View Ward, Vazhicherry Ward, Alappuzha, Kerala 688001
 - **Phone / WhatsApp**: `+91 95626 27451`
 - **Email**: `alleppeyvillageshikaraboating@gmail.com`
 - **Core Offerings**:
