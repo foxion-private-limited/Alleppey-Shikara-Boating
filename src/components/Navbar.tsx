@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Compass } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { NAV_LINKS } from '@/lib/constants';
 
 interface NavbarProps {
@@ -64,19 +65,20 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         <div className="flex items-center justify-between">
           {/* Logo / Brand Name */}
           <Link
-            href={isHome ? '#' : '/'}
-            className="group flex items-center space-x-2.5 focus:outline-none"
+            href="/"
+            className="group flex items-center space-x-2.5 sm:space-x-3 focus:outline-none"
             aria-label="Alleppey Village Shikara Boating Home"
           >
-            <span
-              className={`p-1.5 rounded-full transition-colors duration-300 ${
-                isScrolled
-                  ? 'bg-forest-800 text-cream-50'
-                  : 'bg-white/15 text-cream-100 backdrop-blur-sm border border-white/20'
-              }`}
-            >
-              <Compass className="w-5 h-5 stroke-[1.75]" />
-            </span>
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 shrink-0 overflow-hidden rounded-full border border-white/25 bg-white/10 backdrop-blur-sm shadow-sm transition-transform duration-300 group-hover:scale-105">
+              <Image
+                src="/logo.png"
+                alt="Alleppey Village Shikara Boating logo"
+                width={40}
+                height={40}
+                className="w-full h-full object-contain p-0.5"
+                priority
+              />
+            </div>
             <div className="flex flex-col">
               <span
                 className={`font-serif text-lg sm:text-xl font-semibold tracking-tight transition-colors duration-300 ${

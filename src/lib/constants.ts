@@ -39,8 +39,8 @@ export const BUSINESS_CONFIG = {
     emailPlaceholder: contactEmail,
   },
   social: {
-    instagram: 'https://instagram.com',
-    facebook: 'https://facebook.com',
+    instagram: 'https://www.instagram.com/alleppeyvillageshikaraboating',
+    whatsapp: 'https://wa.me/919562627451',
     foxion: 'https://foxion.in/',
   },
 };

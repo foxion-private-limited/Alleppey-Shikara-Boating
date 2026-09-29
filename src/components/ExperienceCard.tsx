@@ -7,6 +7,7 @@ export interface ExperienceItem {
   title: string;
   description: string;
   image: string;
+  alt?: string;
   duration: string;
   timing: string;
   highlights: string[];
@@ -24,7 +25,7 @@ export default function ExperienceCard({ experience, onSelect }: ExperienceCardP
       <div className="relative h-64 sm:h-72 w-full overflow-hidden">
         <Image
           src={experience.image}
-          alt={`${experience.title} - Shikara boating in Alleppey, Kerala`}
+          alt={experience.alt || `${experience.title} - Shikara boating in Alleppey, Kerala`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover object-center group-hover:scale-105 transition-transform duration-700"

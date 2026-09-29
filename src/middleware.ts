@@ -5,10 +5,27 @@ const JWT_SECRET = new TextEncoder().encode(
   process.env.JWT_SECRET || 'alleppey-secret-key-super-secure-token-2026'
 );
 
+// Explicit 301 migration redirects from old website structure (single-hop, no redirect chains)
+const MIGRATION_REDIRECTS: Record<string, string> = {
+  '/about-us': '/',
+  '/about-us/': '/',
+  '/packages-2': '/',
+  '/packages-2/': '/',
+  '/contact': '/',
+  '/contact/': '/',
+  '/gallery/': '/gallery',
+};
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Only protect /admin routes
+  // 1. Permanent 301 migration redirects
+  const redirectTarget = MIGRATION_REDIRECTS[pathname];
+  if (redirectTarget) {
+    return NextResponse.redirect(new URL(redirectTarget, request.url), 301);
+  }
+
+  // 2. Only protect /admin routes
   if (pathname.startsWith('/admin')) {
     const isLoginPage = pathname === '/admin/login';
     const token = request.cookies.get('admin_session')?.value;
@@ -38,5 +55,14 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: [
+    '/admin/:path*',
+    '/about-us',
+    '/about-us/',
+    '/packages-2',
+    '/packages-2/',
+    '/contact',
+    '/contact/',
+    '/gallery/',
+  ],
 };

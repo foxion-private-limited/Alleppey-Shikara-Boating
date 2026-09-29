@@ -96,6 +96,17 @@ Alleppey_Shikara/
 | `/admin/reviews` | Static (Protected) | No (`disallowed`) | Review moderation dashboard for approving guest submissions. |
 | `/api/*` | Dynamic API | No (`disallowed`) | Internal REST endpoints for authentication, reviews, pricing, and packages. |
 
+### Migration 301 Redirects (Preserving SEO from Old Website)
+Permanent single-hop HTTP 301 redirects mapped in `src/middleware.ts` and `next.config.mjs` with `skipTrailingSlashRedirect: true`:
+
+| Old Website URL | Redirect Target | HTTP Status | Notes |
+|---|---|---|---|
+| `/about-us/` and `/about-us` | `/` | 301 Moved Permanently | Content lives as `#about` section on homepage. |
+| `/packages-2/` and `/packages-2` | `/` | 301 Moved Permanently | Content lives as `#packages` / `#pricing` sections. |
+| `/contact/` and `/contact` | `/` | 301 Moved Permanently | Content lives as `#contact` footer / location section. |
+| `/gallery/` | `/gallery` | 301 Moved Permanently | Direct 1:1 page migration (trailing slash stripped cleanly). |
+| Unknown URLs | 404 Not Found | 404 | No blind catch-all redirecting. Genuinely invalid paths return 404. |
+
 ---
 
 ## 5. Components

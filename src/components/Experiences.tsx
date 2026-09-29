@@ -7,7 +7,8 @@ const experiencesData: ExperienceItem[] = [
     title: 'Sunrise Cruise',
     description:
       'Start your day on calm backwaters, surrounded by village life, birds and golden morning light.',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/sunrise-cruise.jpg',
+    alt: 'Sunrise Shikara cruise through the Alleppey backwaters in Kerala',
     duration: '2 to 3 Hours',
     timing: '6:00 AM – 9:00 AM',
     highlights: ['Morning Mist', 'Bird Watching', 'Quiet Waters', 'Chai on Boat'],
@@ -51,7 +52,8 @@ export default function Experiences({ onSelectExperience }: ExperiencesProps) {
   };
 
   return (
-    <section id="experiences" className="py-24 bg-white border-y border-forest-900/5">
+    <section id="experiences" className="py-24 bg-white border-y border-forest-900/5 relative scroll-mt-20">
+      <div id="packages" className="absolute -top-24 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-16">

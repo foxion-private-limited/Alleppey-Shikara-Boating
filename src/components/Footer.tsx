@@ -17,13 +17,7 @@ function InstagramIcon({ className = 'w-4 h-4' }: { className?: string }) {
   );
 }
 
-function FacebookIcon({ className = 'w-4 h-4' }: { className?: string }) {
-  return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-      <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.667 5H18V0h-3.808C10.596 0 9 1.583 9 4.615V8z"/>
-    </svg>
-  );
-}
+
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -54,40 +48,56 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-cream-100/15">
-          {/* Brand & Description */}
           <div className="lg:col-span-4 flex flex-col space-y-4">
-            <div className="flex items-center space-x-2.5">
-              <span className="p-1.5 rounded-full bg-forest-800 text-gold-300 border border-forest-700/50">
-                <Compass className="w-5 h-5 stroke-[1.75]" />
-              </span>
+            <Link
+              href="/"
+              className="flex items-center space-x-2.5 sm:space-x-3 group w-fit focus:outline-none"
+              aria-label="Alleppey Village Shikara Boating Home"
+            >
+              <div className="relative w-9 h-9 sm:w-10 sm:h-10 shrink-0 overflow-hidden rounded-full border border-forest-700/50 bg-forest-900/60 shadow-sm transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/logo.png"
+                  alt="Alleppey Village Shikara Boating logo"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain p-0.5"
+                />
+              </div>
               <span className="font-serif text-xl font-semibold text-cream-50">
                 Alleppey Village Shikara Boating
               </span>
-            </div>
+            </Link>
 
             <p className="text-sm text-cream-100/90 font-light leading-relaxed max-w-sm">
               Discover the peaceful backwaters, authentic village canals, and timeless beauty of Alappuzha aboard traditional shaded Shikara boats.
             </p>
 
-            {/* Social Icons */}
+            {/* Social / Contact Icons */}
             <div className="flex items-center space-x-3 pt-2">
               <a
-                href={BUSINESS_CONFIG.social.instagram}
+                href="https://www.instagram.com/alleppeyvillageshikaraboating"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow on Instagram"
-                className="w-9 h-9 rounded-full bg-forest-900/80 border border-forest-700/60 flex items-center justify-center text-cream-100 hover:text-white hover:bg-forest-800 transition-colors"
+                aria-label="Instagram - Alleppey Village Shikara Boating"
+                className="w-9 h-9 rounded-full bg-forest-900/80 border border-forest-700/60 flex items-center justify-center text-cream-100 hover:text-white hover:bg-forest-800 transition-colors focus:outline-none focus:ring-2 focus:ring-gold-400"
               >
                 <InstagramIcon className="w-4 h-4" />
               </a>
               <a
-                href={BUSINESS_CONFIG.social.facebook}
+                href="https://wa.me/919562627451"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow on Facebook"
-                className="w-9 h-9 rounded-full bg-forest-900/80 border border-forest-700/60 flex items-center justify-center text-cream-100 hover:text-white hover:bg-forest-800 transition-colors"
+                aria-label="WhatsApp - Alleppey Village Shikara Boating"
+                className="w-9 h-9 rounded-full bg-forest-900/80 border border-forest-700/60 flex items-center justify-center text-cream-100 hover:text-white hover:bg-forest-800 transition-colors focus:outline-none focus:ring-2 focus:ring-gold-400"
               >
-                <FacebookIcon className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" />
+              </a>
+              <a
+                href="mailto:alleppeyvillageshikaraboating@gmail.com"
+                aria-label="Email - Alleppey Village Shikara Boating"
+                className="w-9 h-9 rounded-full bg-forest-900/80 border border-forest-700/60 flex items-center justify-center text-cream-100 hover:text-white hover:bg-forest-800 transition-colors focus:outline-none focus:ring-2 focus:ring-gold-400"
+              >
+                <Mail className="w-4 h-4" />
               </a>
             </div>
           </div>
