@@ -5,10 +5,13 @@ import { getBaseUrl } from './siteUrl';
  * Designed to easily update with real contact & booking information.
  */
 
-// const rawWhatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+916282995964'; // DEPRECATED: Old incorrect number - commented out
-const rawWhatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+91 95626 27451';
+const rawWhatsapp =
+  process.env.WHATSAPP_NUMBER ||
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ||
+  '+91 95626 27451';
 const cleanWhatsappDigits = rawWhatsapp.replace(/\D/g, '');
 const contactEmail =
+  process.env.CONTACT_EMAIL ||
   process.env.NEXT_PUBLIC_CONTACT_EMAIL ||
   process.env.ADMIN_EMAIL ||
   'alleppeyvillageshikaraboating@gmail.com';

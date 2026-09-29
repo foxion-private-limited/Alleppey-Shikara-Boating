@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    WHATSAPP_NUMBER: process.env.WHATSAPP_NUMBER || process.env.NEXT_PUBLIC_WHATSAPP_NUMBER,
+    SITE_URL: process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL,
+    CONTACT_EMAIL: process.env.CONTACT_EMAIL || process.env.NEXT_PUBLIC_CONTACT_EMAIL,
+  },
   skipTrailingSlashRedirect: true,
   images: {
     qualities: [75, 90],

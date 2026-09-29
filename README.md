@@ -71,7 +71,7 @@ Alleppey_Shikara/
 │   │   ├── galleryData.ts        # Metadata, aspect ratios, and grid spans for gallery photos
 │   │   ├── mongodb.ts            # MongoDB connection caching and Mongoose models
 │   │   ├── serverGallery.ts      # Server-side helper to fetch gallery items
-│   │   └── siteUrl.ts            # Dynamic canonical URL helper resolving NEXT_PUBLIC_SITE_URL
+│   │   └── siteUrl.ts            # Dynamic canonical URL helper resolving SITE_URL
 │   └── middleware.ts             # Route guard protecting /admin paths
 ├── next.config.mjs               # Next.js configuration (remote image domains)
 ├── tailwind.config.ts            # Theme customization (forest, cream, gold palettes)
@@ -162,8 +162,9 @@ Permanent single-hop HTTP 301 redirects mapped in `src/middleware.ts` and `next.
 All canonical tags, Open Graph URLs, XML sitemaps, and structured data dynamically derive from `getBaseUrl()` (`src/lib/siteUrl.ts`):
 ```ts
 export function getBaseUrl(): string {
-  if (process.env.NEXT_PUBLIC_SITE_URL) {
-    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/+$/, '');
+  const siteUrl = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL;
+  if (siteUrl) {
+    return siteUrl.replace(/\/+$/, '');
   }
   return 'https://alleppeyvillageshikaraboating.com';
 }
@@ -273,17 +274,17 @@ JWT_SECRET=your_random_64_character_jwt_secret_key
 # Primary business WhatsApp & phone number displayed on site and in booking CTAs
 # Required: YES
 # Format: International format with country code (e.g. +91 95626 27451)
-NEXT_PUBLIC_WHATSAPP_NUMBER=+91 95626 27451
+WHATSAPP_NUMBER=+91 95626 27451
 
 # Primary customer contact email displayed in footer and schema
 # Required: YES
-NEXT_PUBLIC_CONTACT_EMAIL=alleppeyvillageshikaraboating@gmail.com
+CONTACT_EMAIL=alleppeyvillageshikaraboating@gmail.com
 
 # Production domain URL (Used for Canonical tags, Open Graph, Sitemap & Robots)
 # Required: YES
 # Development: https://alleppeyvillageshikaraboating.com or http://localhost:3000
 # Production: https://alleppeyvillageshikaraboating.com (Do NOT add a trailing slash)
-NEXT_PUBLIC_SITE_URL=https://alleppeyvillageshikaraboating.com
+SITE_URL=https://alleppeyvillageshikaraboating.com
 ```
 
 > **Security Note**: Never commit real database credentials, administrative passwords, or JWT secrets to Git version control.
@@ -349,7 +350,7 @@ When switching from the Vercel staging deployment (`https://alleppey-shikara-boa
    - Configure your DNS provider with the A Record (`76.76.21.21`) and CNAME record (`cname.vercel-dns.com`).
 2. **Update Environment Variable**:
    - In Vercel, navigate to **Settings → Environment Variables**.
-   - Edit `NEXT_PUBLIC_SITE_URL` to match the exact primary production domain:
+   - Edit `SITE_URL` to match the exact primary production domain:
      `https://alleppeyvillageshikaraboating.com` (no trailing slash).
    - Trigger a redeployment (**Deployments → Redeploy**) so all static pages, canonical tags, Open Graph cards, `sitemap.xml`, and `robots.txt` re-bake with the production domain.
 3. **Verify Generation**:
