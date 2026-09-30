@@ -21,7 +21,7 @@ const foodExperiences = [
     image: "/images/food-sadya.jpg",
   },
   {
-    title: "Prawns — Karimeen Pollichathu",
+    title: "Prawns & Karimeen Pollichathu",
     category: "Kerala Specialities",
     description:
       "Taste the flavours of Kerala with fresh seafood prepared in traditional local style, including prawns and Karimeen Pollichathu.",
