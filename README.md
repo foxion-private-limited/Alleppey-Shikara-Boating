@@ -134,7 +134,7 @@ Permanent single-hop HTTP 301 redirects mapped in `src/middleware.ts` and `next.
 
 ### Title & Meta Description
 - **Homepage Title**: `Alleppey Shikara Boating | Alappuzha Backwater Tours`
-- **Homepage Meta Description**: `Book authentic Alleppey Shikara boating through peaceful Alappuzha backwaters, narrow village canals, and Vembanad Lake. Private sunrise, sunset, and 2 to 3-hour rides from ₹600/hr.`
+- **Homepage Meta Description**: `Book Alleppey Shikara boating through peaceful backwaters and village canals. Private 2–3 hour rides on Punnamada and Vembanad Lake from ₹600/hr.`
 - **Gallery Page Title**: `Photo Gallery | Alleppey Village Shikara Boating`
 - **Gallery Meta Description**: `Browse our curated photo moments from Alleppey Village Shikara Boating in Alappuzha, Kerala. Discover peaceful village canals, lush paddy fields, and golden sunsets.`
 

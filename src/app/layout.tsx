@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: 'Alleppey Shikara Boating | Alappuzha Backwater Tours',
   description:
-    'Book authentic Alleppey Shikara boating through peaceful Alappuzha backwaters, narrow village canals, and Vembanad Lake. Private sunrise, sunset, and 2 to 3-hour rides from ₹600/hr.',
+    'Book Alleppey Shikara boating through peaceful backwaters and village canals. Private 2–3 hour rides on Punnamada and Vembanad Lake from ₹600/hr.',
   keywords: [
     'Alleppey Shikara Boating',
     'Shikara Boating Alleppey',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Alleppey Village Shikara Boating' }],
   alternates: {
-    canonical: `${baseUrl}`,
+    canonical: `${baseUrl}/`,
   },
   icons: {
     icon: [

@@ -9,8 +9,8 @@
 export function getBaseUrl(): string {
   // 1. Explicit public site URL configured via environment variable
   const siteUrl = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL;
-  if (siteUrl) {
-    return siteUrl.replace(/\/+$/, '');
+  if (siteUrl && siteUrl.trim()) {
+    return siteUrl.trim().replace(/\/+$/, '');
   }
 
   // 2. Fallback to production business domain
