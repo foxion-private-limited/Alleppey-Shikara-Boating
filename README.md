@@ -114,7 +114,7 @@ Permanent single-hop HTTP 301 redirects mapped in `src/middleware.ts` and `next.
 - **`Hero.tsx`**: Renders the primary `<h1>` (*"Alleppey Shikara Boating – Explore the Alappuzha Backwaters"*), high-priority optimized background photography with gradient overlay, and dual conversion buttons.
 - **`TrustBar.tsx`**: Displays credibility signals (5+ Years Experience, Authentic Village Routes, Private & Small Groups, Alappuzha Backwaters).
 - **`Introduction.tsx`**: Sets up semantic `<h2>` content differentiating nimble Shikaras from bulky houseboats for narrow village canal navigation.
-- **`JourneySection.tsx`**: Visualizes step-by-step route stops for the popular 2-Hour and recommended 3-Hour cruises across Punnamada Lake, Vembanad Lake, paddy fields, and village canals.
+- **`JourneySection.tsx`**: Visualizes step-by-step route stops for the 2-Hour island-circling loop (Punnamada Lake → Vilakkumaram Canal → Kavungal Devi Temple → Azheekal Kanal → Kuppappuram Village → Azheekal Village → Returns to Punnamada Lake) and recommended 3-Hour forward cruise (Punnamada Lake → Vilakkumaram Canal → Kavungal Devi Temple → Kuppappuram Village → Azheekal Canal & Village → Naduthuruth Canal → Vembanad Lake).
 - **`FoodSection.tsx`**: Highlights authentic culinary offerings (Kerala Breakfast, Banana-Leaf Sadya, Fresh Seafood Karimeen Pollichathu, Tapioca & Toddy).
 - **`Experiences.tsx`**: Features specialized cruise timings (Sunrise Cruise 6:00–9:00 AM, Village Backwater Cruise, Sunset Cruise 4:30–6:30 PM).
 - **`FeaturedExperience.tsx`**: Showcases combination options including Shikara boating, canoeing, kayaking, open boating, and speed boating.
@@ -402,8 +402,8 @@ Whenever making changes in the future, adhere to the following checklist:
 - **Email**: `alleppeyvillageshikaraboating@gmail.com`
 - **Core Offerings**:
   - Hourly private Shikara boating (from ₹600/hr, up to 6 people)
-  - 2-Hour Classic Backwater Cruise
-  - 3-Hour Recommended Backwater Experience (Vembanad Lake, village walk, canals)
+  - 2-Hour Classic Island Loop Cruise (Punnamada Lake return circuit)
+  - 3-Hour Recommended Backwater Experience (Punnamada Lake to Vembanad Lake)
   - Sunrise Cruise (6:00 AM – 9:00 AM)
   - Sunset Cruise (4:30 PM – 6:30 PM)
   - Traditional Kerala food arrangements (Sadya lunch, breakfast, Karimeen seafood)
