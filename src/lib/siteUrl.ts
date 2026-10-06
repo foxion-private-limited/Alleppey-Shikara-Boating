@@ -14,5 +14,5 @@ export function getBaseUrl(): string {
   }
 
   // 2. Fallback to production business domain
-  return 'https://alleppeyvillageshikaraboating.com';
+  return 'https://www.alleppeyvillageshikaraboating.com';
 }

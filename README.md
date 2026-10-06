@@ -166,7 +166,7 @@ export function getBaseUrl(): string {
   if (siteUrl) {
     return siteUrl.replace(/\/+$/, '');
   }
-  return 'https://alleppeyvillageshikaraboating.com';
+  return 'https://www.alleppeyvillageshikaraboating.com';
 }
 ```
 This guarantees that temporary Vercel preview URLs (e.g. `https://alleppey-shikara-boating.vercel.app`) never get hardcoded as permanent production identities.
@@ -282,9 +282,9 @@ CONTACT_EMAIL=alleppeyvillageshikaraboating@gmail.com
 
 # Production domain URL (Used for Canonical tags, Open Graph, Sitemap & Robots)
 # Required: YES
-# Development: https://alleppeyvillageshikaraboating.com or http://localhost:3000
-# Production: https://alleppeyvillageshikaraboating.com (Do NOT add a trailing slash)
-SITE_URL=https://alleppeyvillageshikaraboating.com
+# Development: https://www.alleppeyvillageshikaraboating.com or http://localhost:3000
+# Production: https://www.alleppeyvillageshikaraboating.com (Do NOT add a trailing slash)
+SITE_URL=https://www.alleppeyvillageshikaraboating.com
 ```
 
 > **Security Note**: Never commit real database credentials, administrative passwords, or JWT secrets to Git version control.
@@ -342,7 +342,7 @@ npm run start
 
 ## 13. Custom Domain Setup
 
-When switching from the Vercel staging deployment (`https://alleppey-shikara-boating.vercel.app`) to the client's permanent custom domain (e.g. `https://alleppeyvillageshikaraboating.com`):
+When switching from the Vercel staging deployment (`https://alleppey-shikara-boating.vercel.app`) to the client's permanent custom domain (e.g. `https://www.alleppeyvillageshikaraboating.com`):
 
 1. **Vercel Domains**:
    - Go to **Vercel Project Dashboard → Settings → Domains**.
@@ -351,11 +351,11 @@ When switching from the Vercel staging deployment (`https://alleppey-shikara-boa
 2. **Update Environment Variable**:
    - In Vercel, navigate to **Settings → Environment Variables**.
    - Edit `SITE_URL` to match the exact primary production domain:
-     `https://alleppeyvillageshikaraboating.com` (no trailing slash).
+     `https://www.alleppeyvillageshikaraboating.com` (no trailing slash).
    - Trigger a redeployment (**Deployments → Redeploy**) so all static pages, canonical tags, Open Graph cards, `sitemap.xml`, and `robots.txt` re-bake with the production domain.
 3. **Verify Generation**:
-   - Visit `https://alleppeyvillageshikaraboating.com/robots.txt` and confirm the `Sitemap:` directive points to `https://alleppeyvillageshikaraboating.com/sitemap.xml`.
-   - Visit `https://alleppeyvillageshikaraboating.com/sitemap.xml` and confirm all `<loc>` tags reflect the production domain.
+   - Visit `https://www.alleppeyvillageshikaraboating.com/robots.txt` and confirm the `Sitemap:` directive points to `https://www.alleppeyvillageshikaraboating.com/sitemap.xml`.
+   - Visit `https://www.alleppeyvillageshikaraboating.com/sitemap.xml` and confirm all `<loc>` tags reflect the production domain.
 
 ---
 
@@ -365,17 +365,17 @@ Immediately after the custom domain is live and SSL is active:
 
 1. **Add Property**:
    - Open [Google Search Console](https://search.google.com/search-console).
-   - Add a **Domain Property** (e.g. `alleppeyvillageshikaraboating.com`) via DNS TXT verification, or a **URL Prefix Property** (`https://alleppeyvillageshikaraboating.com`).
+   - Add a **Domain Property** (e.g. `alleppeyvillageshikaraboating.com`) via DNS TXT verification, or a **URL Prefix Property** (`https://www.alleppeyvillageshikaraboating.com`).
 2. **Submit Sitemap**:
    - Navigate to **Sitemaps** in the left sidebar.
    - Enter `sitemap.xml` and click **Submit**.
    - Verify that Google reports a Status of *Success* and detects the 2 valid indexable URLs (`/` and `/gallery`).
 3. **URL Inspection**:
-   - Inspect the homepage URL `https://alleppeyvillageshikaraboating.com/`.
+   - Inspect the homepage URL `https://www.alleppeyvillageshikaraboating.com/`.
    - Run **Test Live URL** to confirm Googlebot renders the page, detects all 3 JSON-LD schemas (`LocalBusiness`, `WebSite`, `FAQPage`), and indexation is allowed.
    - Click **Request Indexing**.
 4. **Inspect Gallery**:
-   - Inspect `https://alleppeyvillageshikaraboating.com/gallery` and request indexing.
+   - Inspect `https://www.alleppeyvillageshikaraboating.com/gallery` and request indexing.
 5. **Monitor Performance**:
    - Check the **Enhancements** tab for Rich Results validation (FAQ, Breadcrumbs, Merchant listings).
    - Monitor queries, clicks, impressions, and click-through rates (CTR) weekly under **Search Results**.
