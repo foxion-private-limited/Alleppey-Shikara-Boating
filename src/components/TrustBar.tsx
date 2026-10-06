@@ -42,9 +42,9 @@ export default function TrustBar() {
                   <Icon className="w-5 h-5 stroke-[1.75]" />
                 </div>
                 <div className="flex flex-col">
-                  <h3 className="text-sm sm:text-base font-semibold text-forest-950 tracking-tight">
+                  <p className="text-sm sm:text-base font-semibold text-forest-950 tracking-tight">
                     {item.title}
-                  </h3>
+                  </p>
                   <span className="text-xs text-forest-700/80 font-normal mt-0.5">
                     {item.subtitle}
                   </span>

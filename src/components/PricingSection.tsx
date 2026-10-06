@@ -231,9 +231,9 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-forest-950">
+              <p className="text-xs font-semibold uppercase tracking-wider text-forest-950">
                 One Boat · Up to 6 People
-              </h4>
+              </p>
               <p className="text-xs text-earth-700 font-light mt-0.5">
                 Prices are for the private Shikara boat. Price may vary depending on the Shikara boat and group requirements.
               </p>

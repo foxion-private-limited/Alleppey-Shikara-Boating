@@ -51,7 +51,7 @@ export default function FeaturedExperience({ onOpenBooking }: FeaturedExperience
                       <Icon className="w-4 h-4" />
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-cream-50">{feature.name}</h3>
+                      <p className="text-sm font-semibold text-cream-50">{feature.name}</p>
                       <p className="text-xs text-cream-200/70">{feature.desc}</p>
                     </div>
                   </div>

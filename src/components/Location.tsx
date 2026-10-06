@@ -25,9 +25,9 @@ export default function Location() {
                   <MapPin className="w-5 h-5 stroke-[1.75]" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-forest-950 leading-snug">
+                  <p className="text-sm font-semibold text-forest-950 leading-snug">
                     {BUSINESS_CONFIG.location.exactAddress}
-                  </h3>
+                  </p>
                   <p className="text-xs text-earth-700 font-light mt-1">
                     Conveniently located in town with easy vehicle parking and rickshaw access.
                   </p>
@@ -39,9 +39,9 @@ export default function Location() {
                   <Compass className="w-5 h-5 stroke-[1.75]" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-forest-950">
+                  <p className="text-sm font-semibold text-forest-950">
                     Direct Backwater Boarding
-                  </h3>
+                  </p>
                   <p className="text-xs text-earth-700 font-light mt-0.5">
                     Our boats depart directly from the canal jetty into the tranquil waterways of Punnamada and Vembanad.
                   </p>

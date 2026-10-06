@@ -85,9 +85,9 @@ export default function FoodSection() {
               </div>
 
               <div className="p-5 flex flex-col flex-grow">
-                <h3 className="font-serif text-lg font-medium text-forest-950 mb-2">
+                <p className="font-serif text-lg font-medium text-forest-950 mb-2">
                   {item.title}
-                </h3>
+                </p>
                 <p className="text-xs text-earth-800 font-light leading-relaxed flex-grow">
                   {item.description}
                 </p>

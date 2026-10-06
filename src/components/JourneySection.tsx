@@ -250,9 +250,9 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                       </span>
 
                       {/* Stop Name */}
-                      <h4 className="font-serif text-[13px] xl:text-sm font-semibold text-forest-950 mb-1 leading-snug break-words">
+                      <p className="font-serif text-[13px] xl:text-sm font-semibold text-forest-950 mb-1 leading-snug break-words">
                         {stop.name}
-                      </h4>
+                      </p>
 
                       {/* Description */}
                       <p className="text-[11px] text-earth-700 font-light leading-relaxed">
@@ -305,9 +305,9 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                             </span>
                           )}
                         </div>
-                        <h4 className="font-serif text-base font-semibold text-forest-950 mt-0.5 mb-1 break-words">
+                        <p className="font-serif text-base font-semibold text-forest-950 mt-0.5 mb-1 break-words">
                           {stop.name}
-                        </h4>
+                        </p>
                         <p className="text-xs text-earth-700 font-light leading-relaxed">
                           {stop.desc}
                         </p>
@@ -346,9 +346,9 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                 <CheckCircle className="w-5 h-5" />
               </div>
               <div>
-                <h5 className="text-xs uppercase tracking-wider font-semibold text-forest-900 mb-1">
+                <p className="text-xs uppercase tracking-wider font-semibold text-forest-900 mb-1">
                   Why We Recommend 3 Hours
-                </h5>
+                </p>
                 <p className="text-sm text-forest-800/90 font-light leading-relaxed italic">
                   &ldquo;Three hours gives you ample time to cruise the tranquil
                   village canals, pass local landmarks, and continue outward
@@ -465,9 +465,9 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                       </span>
 
                       {/* Stop Name */}
-                      <h4 className="font-serif text-[13px] xl:text-sm font-semibold text-forest-950 mb-1 leading-snug break-words">
+                      <p className="font-serif text-[13px] xl:text-sm font-semibold text-forest-950 mb-1 leading-snug break-words">
                         {stop.name}
-                      </h4>
+                      </p>
 
                       {/* Description */}
                       <p className="text-[11px] text-earth-700 font-light leading-relaxed">
@@ -552,9 +552,9 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                             </span>
                           )}
                         </div>
-                        <h4 className="font-serif text-base font-semibold text-forest-950 mt-0.5 mb-1 break-words">
+                        <p className="font-serif text-base font-semibold text-forest-950 mt-0.5 mb-1 break-words">
                           {stop.name}
-                        </h4>
+                        </p>
                         <p className="text-xs text-earth-700 font-light leading-relaxed">
                           {stop.desc}
                         </p>
@@ -594,9 +594,9 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
               <span className="text-xs uppercase tracking-widest font-semibold text-gold-400 mb-1.5 block">
                 Tailored Itineraries
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl text-cream-50 font-normal mb-2">
+              <p className="font-serif text-2xl sm:text-3xl text-cream-50 font-normal mb-2">
                 Want More Time?
-              </h3>
+              </p>
               <p className="text-sm text-cream-100/90 font-light leading-relaxed">
                 Custom durations are also available for guests who want to
                 explore at their own pace. Trips longer than 3 hours can be

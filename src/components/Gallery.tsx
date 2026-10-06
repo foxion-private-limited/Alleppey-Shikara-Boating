@@ -180,9 +180,9 @@ export default function Gallery() {
                         <span>{photo.location}</span>
                       </p>
                     )}
-                    <h3 className="font-serif text-lg sm:text-xl text-cream-50 font-medium leading-snug">
+                    <p className="font-serif text-lg sm:text-xl text-cream-50 font-medium leading-snug">
                       {photo.title}
-                    </h3>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -196,7 +196,7 @@ export default function Gallery() {
             href="/gallery"
             className="inline-flex items-center space-x-2.5 px-8 py-4 rounded-full bg-forest-800 text-cream-50 hover:bg-forest-900 transition-all duration-300 text-sm font-semibold tracking-wide shadow-sm hover:shadow-md group"
           >
-            <span>View All Photos</span>
+            <span>View the Shikara Boating Gallery</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
           </Link>
           <p className="text-xs text-earth-700/70 mt-3 font-light">

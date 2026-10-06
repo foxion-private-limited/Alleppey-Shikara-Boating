@@ -123,12 +123,12 @@ export default function BookingModal({
               <span>Direct Captain Reservation</span>
             </div>
 
-            <h3
+            <p
               id="booking-modal-title"
               className="font-serif text-2xl sm:text-3xl text-forest-950 font-normal tracking-tight leading-tight"
             >
               Reserve Your Shikara Cruise
-            </h3>
+            </p>
 
             <p className="text-xs sm:text-sm text-earth-700 font-light mt-1.5 leading-relaxed pr-8">
               Personalized backwater itineraries in Alappuzha. Choose your details below for instant WhatsApp or email confirmation directly with the boat team.

@@ -50,7 +50,7 @@ export default function Introduction() {
             </h2>
 
             <p className="text-base sm:text-lg text-earth-800 font-light leading-relaxed mb-6">
-              Leave the busy tourist routes behind and discover the quieter side of Kerala&apos;s backwaters. Glide through narrow canals, watch village life unfold along the waterways and enjoy the peaceful beauty of coconut palms and paddy fields.
+              Our private Alappuzha backwater tours let you leave the busy tourist routes behind and discover the quieter side of Kerala&apos;s backwaters. Glide through narrow canals, watch village life unfold along the waterways, and enjoy the peaceful beauty of coconut palms and paddy fields.
             </p>
 
             <p className="text-sm sm:text-base text-earth-700 font-light leading-relaxed mb-8">

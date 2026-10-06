@@ -52,9 +52,9 @@ export default function WhyChooseUs() {
                 <div className="w-12 h-12 rounded-xl bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-800 mb-6">
                   <Icon className="w-6 h-6 stroke-[1.75]" />
                 </div>
-                <h3 className="font-serif text-xl font-medium text-forest-950 mb-3">
+                <p className="font-serif text-xl font-medium text-forest-950 mb-3">
                   {reason.title}
-                </h3>
+                </p>
                 <p className="text-sm text-earth-800 leading-relaxed font-light">
                   {reason.description}
                 </p>

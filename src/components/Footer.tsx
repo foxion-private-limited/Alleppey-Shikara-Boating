@@ -104,9 +104,9 @@ export default function Footer() {
 
           {/* Quick Navigation Links */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs uppercase tracking-[0.2em] font-semibold text-gold-400 mb-4">
+            <p className="text-xs uppercase tracking-[0.2em] font-semibold text-gold-400 mb-4">
               Explore
-            </h4>
+            </p>
             <ul className="space-y-2.5">
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>
@@ -131,9 +131,9 @@ export default function Footer() {
 
           {/* Location details as specified in prompt */}
           <div className="lg:col-span-5 space-y-4">
-            <h4 className="text-xs uppercase tracking-[0.2em] font-semibold text-gold-400">
+            <p className="text-xs uppercase tracking-[0.2em] font-semibold text-gold-400">
               Find Us
-            </h4>
+            </p>
             <div className="space-y-2 text-sm text-cream-100/90 font-light leading-relaxed">
               <p className="font-normal text-cream-50">
                 Vazhichery Jn,

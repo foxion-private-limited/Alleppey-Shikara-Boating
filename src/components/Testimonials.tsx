@@ -215,7 +215,7 @@ export default function Testimonials() {
             <div className="w-14 h-14 rounded-full bg-cream-100 flex items-center justify-center mx-auto text-forest-800 mb-4">
               <MessageSquareQuote className="w-7 h-7 stroke-[1.5]" />
             </div>
-            <h3 className="font-serif text-2xl text-forest-950 font-normal mb-2">No reviews yet</h3>
+            <p className="font-serif text-2xl text-forest-950 font-normal mb-2">No reviews yet</p>
             <p className="text-sm text-earth-700 font-light mb-6">
               Be the first to share your experience aboard our Alleppey shikara boat.
             </p>
@@ -259,7 +259,7 @@ export default function Testimonials() {
                 {/* Footer with Name and Date */}
                 <div className="pt-4 border-t border-forest-100 flex items-center justify-between">
                   <div>
-                    <h4 className="text-sm font-semibold text-forest-950">{item.name}</h4>
+                    <p className="text-sm font-semibold text-forest-950">{item.name}</p>
                     {item.createdAt && (
                       <p className="text-xs text-earth-600 font-light mt-0.5">
                         {formatDate(item.createdAt)}
@@ -310,12 +310,12 @@ export default function Testimonials() {
                   <span>Guest Feedback</span>
                 </div>
 
-                <h3
+                <p
                   id="write-review-title"
                   className="font-serif text-2xl sm:text-3xl text-forest-950 font-normal tracking-tight"
                 >
                   Share Your Experience
-                </h3>
+                </p>
                 <p className="text-xs sm:text-sm text-earth-700 font-light mt-1.5 leading-relaxed pr-6">
                   Tell us about your backwater voyage. Submitted reviews are reviewed and posted to
                   the website.
@@ -335,9 +335,9 @@ export default function Testimonials() {
                   <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <h4 className="font-serif text-xl font-medium text-forest-950">
+                  <p className="font-serif text-xl font-medium text-forest-950">
                     Review Submitted!
-                  </h4>
+                  </p>
                   <p className="text-sm text-earth-700 font-light max-w-sm mx-auto leading-relaxed">
                     {formSuccess}
                   </p>

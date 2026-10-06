@@ -64,7 +64,7 @@ export default function Experiences({ onSelectExperience }: ExperiencesProps) {
             Choose Your Backwater Experience
           </h2>
           <p className="text-base sm:text-lg text-earth-800 font-light leading-relaxed">
-            Whether you want a peaceful morning cruise or a magical sunset on the water, choose the experience that suits your journey.
+            Whether you want a peaceful morning cruise or a magical sunset on the water, choose the Alappuzha backwater tour that best suits your journey.
           </p>
         </div>
 
