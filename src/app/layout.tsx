@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { getBaseUrl } from '@/lib/siteUrl';
@@ -202,6 +203,19 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-cream-50 text-forest-950 font-sans antialiased selection:bg-forest-800 selection:text-cream-100">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-2Y4JVT2HBB"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-2Y4JVT2HBB');
+          `}
+        </Script>
         {children}
       </body>
     </html>
