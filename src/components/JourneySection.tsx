@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   Waves,
   Navigation,
@@ -14,51 +14,50 @@ import {
   Clock,
   CheckCircle,
   RotateCcw,
-} from 'lucide-react';
-import { BUSINESS_CONFIG } from '@/lib/constants';
+} from "lucide-react";
+import { BUSINESS_CONFIG } from "@/lib/constants";
 
 interface JourneySectionProps {
   onOpenBooking?: (title?: string) => void;
 }
 
 export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
-  // Exact 2-Hour Route: Island-circling loop starting and ending at Punnamada Lake
   const twoHourStops = [
     {
-      name: 'Punnamada Lake',
-      badge: 'Start / Origin',
-      desc: 'Embark from Punnamada Lake, starting point of our island-circling loop.',
+      name: "Punnamada Lake",
+      badge: "Start / Origin",
+      desc: "Embark from Punnamada Lake, starting point of our island-circling loop.",
       icon: Waves,
     },
     {
-      name: 'Vilakkumaram Canal',
-      desc: 'Cruise into peaceful Vilakkumaram Canal shaded by coconut palms.',
+      name: "Vilakkumaram Canal",
+      desc: "Cruise into peaceful Vilakkumaram Canal shaded by coconut palms.",
       icon: Navigation,
     },
     {
-      name: 'Kavungal Devi Temple',
-      desc: 'Glide past the historic Kavungal Devi Temple on the water’s edge.',
+      name: "Kavungal Devi Temple",
+      desc: "Glide past the historic Kavungal Devi Temple on the water’s edge.",
       icon: Landmark,
     },
     {
-      name: 'Azheekal Kanal',
-      desc: 'Navigate through scenic, serene waterways of Azheekal Kanal.',
+      name: "Azheekal Kanal",
+      desc: "Navigate through scenic, serene waterways of Azheekal Kanal.",
       icon: Navigation,
     },
     {
-      name: 'Kuppappuram Village',
-      desc: 'Experience quiet village life and traditional waterside homes.',
+      name: "Kuppappuram Village",
+      desc: "Experience quiet village life and traditional waterside homes.",
       icon: Home,
     },
     {
-      name: 'Azheekal Village',
-      desc: 'Pass traditional village waterways circling around the island.',
+      name: "Azheekal Village",
+      desc: "Pass traditional village waterways circling around the island.",
       icon: Trees,
     },
     {
-      name: 'Returns to Punnamada Lake',
-      badge: 'Circuit Complete',
-      desc: 'Complete the scenic loop, returning smoothly to Punnamada Lake.',
+      name: "Returns to Punnamada Lake",
+      badge: "Circuit Complete",
+      desc: "Complete the scenic loop, returning smoothly to Punnamada Lake.",
       icon: RotateCcw,
       isLoopReturn: true,
     },
@@ -67,53 +66,57 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
   // Exact 3-Hour Route: Extended journey ending at Vembanad Lake
   const threeHourStops = [
     {
-      name: 'Punnamada Lake',
-      badge: 'Departure Point',
-      desc: 'Begin your extended backwater journey from Punnamada Lake.',
+      name: "Punnamada Lake",
+      badge: "Departure Point",
+      desc: "Begin your extended backwater journey from Punnamada Lake.",
       icon: Waves,
     },
     {
-      name: 'Vilakkumaram Canal',
-      desc: 'Cruise through the serene waters of Vilakkumaram Canal.',
+      name: "Vilakkumaram Canal",
+      desc: "Cruise through the serene waters of Vilakkumaram Canal.",
       icon: Navigation,
     },
     {
-      name: 'Kavungal Devi Temple',
-      desc: 'Pass the revered Kavungal Devi Temple on the canal edge.',
+      name: "Kavungal Devi Temple",
+      desc: "Pass the revered Kavungal Devi Temple on the canal edge.",
       icon: Landmark,
     },
     {
-      name: 'Kuppappuram Village',
-      desc: 'Observe everyday village life and culture in Kuppappuram.',
+      name: "Kuppappuram Village",
+      desc: "Observe everyday village life and culture in Kuppappuram.",
       icon: Home,
     },
     {
-      name: 'Azheekal Canal & Village',
-      desc: 'Journey onward along scenic Azheekal Canal and village shores.',
+      name: "Azheekal Canal & Village",
+      desc: "Journey onward along scenic Azheekal Canal and village shores.",
       icon: Trees,
     },
     {
-      name: 'Naduthuruth Canal',
-      desc: 'Navigate through Naduthuruth Canal toward the vast lake horizon.',
+      name: "Naduthuruth Canal",
+      desc: "Navigate through Naduthuruth Canal toward the vast lake horizon.",
       icon: Navigation,
     },
     {
-      name: 'Vembanad Lake',
-      badge: 'Final Destination',
-      desc: 'Emerge into the majestic open waters of Vembanad Lake.',
+      name: "Vembanad Lake",
+      badge: "Final Destination",
+      desc: "Emerge into the majestic open waters of Vembanad Lake.",
       icon: Compass,
       isDestination: true,
     },
   ];
 
   const handleCustomInquiry = () => {
-    const text = 'Hi, I would like to inquire about a custom duration Shikara boating trip in Alappuzha.';
+    const text =
+      "Hi, I would like to inquire about a custom duration Shikara boating trip in Alappuzha.";
     const url = `https://wa.me/${BUSINESS_CONFIG.contact.whatsappCleanDigits}?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank');
+    window.open(url, "_blank");
   };
 
   return (
-    <section id="routes" className="py-20 sm:py-24 bg-cream-50/70 border-b border-forest-900/10 relative overflow-hidden">
+    <section
+      id="routes"
+      className="py-20 sm:py-24 bg-cream-50/70 border-b border-forest-900/10 relative overflow-hidden"
+    >
       {/* Decorative subtle water flow background wave */}
       <div className="absolute top-1/2 left-0 right-0 h-96 bg-gradient-to-b from-forest-100/30 to-transparent -translate-y-1/2 pointer-events-none" />
 
@@ -128,7 +131,8 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
             Your Journey Through the Backwaters
           </h2>
           <p className="text-base sm:text-lg text-earth-800 font-light leading-relaxed">
-            Every route takes you deeper into the peaceful side of Alappuzha — from tranquil village canals to expansive open lakes.
+            Every route takes you deeper into the peaceful side of Alappuzha —
+            from tranquil village canals to expansive open lakes.
           </p>
         </div>
 
@@ -149,19 +153,23 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
               <div className="max-w-3xl">
                 <div className="flex items-center space-x-2 text-forest-700 text-xs font-semibold uppercase tracking-wider mb-1">
                   <Clock className="w-3.5 h-3.5" />
-                  <span>3 Hours · Most Popular Experience · Forward Cruise</span>
+                  <span>
+                    3 Hours · Most Popular Experience · Forward Cruise
+                  </span>
                 </div>
                 <h3 className="font-serif text-2xl sm:text-3xl text-forest-950 font-medium">
                   3 Hour Backwater Experience
                 </h3>
                 <p className="text-sm text-earth-800 font-light mt-2 leading-relaxed">
-                  Our recommended longer journey takes you from Punnamada Lake through village canals and local sights before continuing through Naduthuruth Canal to the open waters of Vembanad Lake.
+                  Our recommended longer journey takes you from Punnamada Lake
+                  through village canals and local sights before continuing
+                  through Naduthuruth Canal to the open waters of Vembanad Lake.
                 </p>
               </div>
 
               <div className="flex-shrink-0">
                 <button
-                  onClick={() => onOpenBooking?.('3 Hour Backwater Experience')}
+                  onClick={() => onOpenBooking?.("3 Hour Backwater Experience")}
                   className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-2.5 rounded-full bg-forest-800 hover:bg-forest-900 text-cream-50 text-xs font-semibold uppercase tracking-wider shadow-sm transition-all"
                 >
                   <span>Book This Route</span>
@@ -175,17 +183,29 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
               <span className="font-semibold text-[10px] uppercase tracking-wider text-forest-700 bg-forest-100/90 px-2 py-0.5 rounded-md mr-1">
                 Route
               </span>
-              <span className="font-medium text-forest-950">Punnamada Lake</span>
+              <span className="font-medium text-forest-950">
+                Punnamada Lake
+              </span>
               <span className="text-forest-400">→</span>
-              <span className="font-medium text-forest-950">Vilakkumaram Canal</span>
+              <span className="font-medium text-forest-950">
+                Vilakkumaram Canal
+              </span>
               <span className="text-forest-400">→</span>
-              <span className="font-medium text-forest-950">Kavungal Devi Temple</span>
+              <span className="font-medium text-forest-950">
+                Kavungal Devi Temple
+              </span>
               <span className="text-forest-400">→</span>
-              <span className="font-medium text-forest-950">Kuppappuram Village</span>
+              <span className="font-medium text-forest-950">
+                Kuppappuram Village
+              </span>
               <span className="text-forest-400">→</span>
-              <span className="font-medium text-forest-950">Azheekal Canal &amp; Village</span>
+              <span className="font-medium text-forest-950">
+                Azheekal Canal &amp; Village
+              </span>
               <span className="text-forest-400">→</span>
-              <span className="font-medium text-forest-950">Naduthuruth Canal</span>
+              <span className="font-medium text-forest-950">
+                Naduthuruth Canal
+              </span>
               <span className="text-forest-400">→</span>
               <span className="font-semibold text-gold-800 bg-gold-100/90 px-2 py-0.5 rounded-md">
                 Vembanad Lake
@@ -203,13 +223,16 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                   const Icon = stop.icon;
                   const isLast = i === threeHourStops.length - 1;
                   return (
-                    <div key={stop.name} className="flex flex-col items-center text-center relative z-10 px-1">
+                    <div
+                      key={stop.name}
+                      className="flex flex-col items-center text-center relative z-10 px-1"
+                    >
                       {/* Node Icon */}
                       <div
                         className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-3 shadow-md transition-transform duration-300 hover:scale-110 ${
                           isLast
-                            ? 'bg-gradient-to-br from-gold-500 to-forest-800 text-cream-50 ring-2 ring-gold-400/40'
-                            : 'bg-forest-800 text-gold-300'
+                            ? "bg-gradient-to-br from-gold-500 to-forest-800 text-cream-50 ring-2 ring-gold-400/40"
+                            : "bg-forest-800 text-gold-300"
                         }`}
                       >
                         <Icon className="w-5 h-5 stroke-[1.75]" />
@@ -219,11 +242,11 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                       <span
                         className={`text-[10px] font-semibold uppercase tracking-wider mb-1 px-1.5 py-0.5 rounded ${
                           isLast
-                            ? 'text-gold-900 bg-gold-100/90 font-bold'
-                            : 'text-forest-700 bg-forest-50'
+                            ? "text-gold-900 bg-gold-100/90 font-bold"
+                            : "text-forest-700 bg-forest-50"
                         }`}
                       >
-                        {isLast ? 'Destination' : `Stop 0${i + 1}`}
+                        {isLast ? "Destination" : `Stop 0${i + 1}`}
                       </span>
 
                       {/* Stop Name */}
@@ -251,8 +274,8 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                       <div
                         className={`absolute -left-[39px] sm:-left-[43px] top-1.5 w-8 h-8 rounded-xl flex items-center justify-center shadow-sm ${
                           isLast
-                            ? 'bg-gradient-to-br from-gold-500 to-forest-800 text-cream-50 ring-2 ring-gold-400/50'
-                            : 'bg-forest-800 text-gold-300'
+                            ? "bg-gradient-to-br from-gold-500 to-forest-800 text-cream-50 ring-2 ring-gold-400/50"
+                            : "bg-forest-800 text-gold-300"
                         }`}
                       >
                         <Icon className="w-4 h-4" />
@@ -262,17 +285,19 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                       <div
                         className={`p-4 rounded-xl border ${
                           isLast
-                            ? 'bg-gold-50/40 border-gold-200 shadow-sm'
-                            : 'bg-cream-50/70 border-forest-100'
+                            ? "bg-gold-50/40 border-gold-200 shadow-sm"
+                            : "bg-cream-50/70 border-forest-100"
                         }`}
                       >
                         <div className="flex items-center justify-between mb-1">
                           <span
                             className={`text-[10px] font-semibold uppercase tracking-widest ${
-                              isLast ? 'text-gold-900' : 'text-forest-700'
+                              isLast ? "text-gold-900" : "text-forest-700"
                             }`}
                           >
-                            {isLast ? 'Final Destination · Stop 07' : `Stop 0${i + 1}`}
+                            {isLast
+                              ? "Final Destination · Stop 07"
+                              : `Stop 0${i + 1}`}
                           </span>
                           {stop.badge && (
                             <span className="text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full bg-forest-100 text-forest-800">
@@ -305,7 +330,9 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
               <div className="flex items-center space-x-2 text-forest-900 font-medium">
                 <Compass className="w-4 h-4 text-forest-700 flex-shrink-0" />
                 <span>
-                  <strong>Forward Route:</strong> Departs Punnamada Lake, voyages through village canals, and finishes at the open waters of <strong>Vembanad Lake</strong>.
+                  <strong>Forward Route:</strong> Departs Punnamada Lake,
+                  voyages through village canals, and finishes at the open
+                  waters of <strong>Vembanad Lake</strong>.
                 </span>
               </div>
               <span className="text-[10px] uppercase font-bold tracking-wider text-forest-700 bg-white px-2.5 py-1 rounded-full border border-forest-200">
@@ -323,7 +350,10 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                   Why We Recommend 3 Hours
                 </h5>
                 <p className="text-sm text-forest-800/90 font-light leading-relaxed italic">
-                  &ldquo;Three hours gives you ample time to cruise the tranquil village canals, pass local landmarks, and continue outward into the breathtaking expanse of Vembanad Lake without feeling rushed.&rdquo;
+                  &ldquo;Three hours gives you ample time to cruise the tranquil
+                  village canals, pass local landmarks, and continue outward
+                  into the breathtaking expanse of Vembanad Lake without feeling
+                  rushed.&rdquo;
                 </p>
               </div>
             </div>
@@ -344,13 +374,17 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                   2 Hour Shikara Experience
                 </h3>
                 <p className="text-sm text-earth-800 font-light mt-2 leading-relaxed">
-                  A scenic island-circling journey through peaceful canals and villages, starting and ending at Punnamada Lake. Cruise through Vilakkumaram Canal, pass Kavungal Devi Temple, explore Azheekal Kanal, Kuppappuram Village and Azheekal Village before returning to Punnamada Lake.
+                  A scenic island-circling journey through peaceful canals and
+                  villages, starting and ending at Punnamada Lake. Cruise
+                  through Vilakkumaram Canal, pass Kavungal Devi Temple, explore
+                  Azheekal Kanal, Kuppappuram Village and Azheekal Village
+                  before returning to Punnamada Lake.
                 </p>
               </div>
 
               <div className="flex-shrink-0">
                 <button
-                  onClick={() => onOpenBooking?.('2 Hour Shikara Experience')}
+                  onClick={() => onOpenBooking?.("2 Hour Shikara Experience")}
                   className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-2.5 rounded-full bg-forest-50 hover:bg-forest-100 text-forest-900 border border-forest-200 text-xs font-semibold uppercase tracking-wider transition-colors"
                 >
                   <span>Book 2 Hour Route</span>
@@ -364,17 +398,29 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
               <span className="font-semibold text-[10px] uppercase tracking-wider text-forest-700 bg-forest-100/90 px-2 py-0.5 rounded-md mr-1">
                 Loop Circuit
               </span>
-              <span className="font-medium text-forest-950">Punnamada Lake</span>
+              <span className="font-medium text-forest-950">
+                Punnamada Lake
+              </span>
               <span className="text-forest-400">→</span>
-              <span className="font-medium text-forest-950">Vilakkumaram Canal</span>
+              <span className="font-medium text-forest-950">
+                Vilakkumaram Canal
+              </span>
               <span className="text-forest-400">→</span>
-              <span className="font-medium text-forest-950">Kavungal Devi Temple</span>
+              <span className="font-medium text-forest-950">
+                Kavungal Devi Temple
+              </span>
               <span className="text-forest-400">→</span>
-              <span className="font-medium text-forest-950">Azheekal Kanal</span>
+              <span className="font-medium text-forest-950">
+                Azheekal Kanal
+              </span>
               <span className="text-forest-400">→</span>
-              <span className="font-medium text-forest-950">Kuppappuram Village</span>
+              <span className="font-medium text-forest-950">
+                Kuppappuram Village
+              </span>
               <span className="text-forest-400">→</span>
-              <span className="font-medium text-forest-950">Azheekal Village</span>
+              <span className="font-medium text-forest-950">
+                Azheekal Village
+              </span>
               <span className="text-emerald-600 font-bold">↺</span>
               <span className="font-semibold text-emerald-900 bg-emerald-100/90 px-2 py-0.5 rounded-md">
                 Returns to Punnamada Lake
@@ -392,13 +438,16 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                   const Icon = stop.icon;
                   const isLast = i === twoHourStops.length - 1;
                   return (
-                    <div key={stop.name} className="flex flex-col items-center text-center relative z-10 px-1">
+                    <div
+                      key={stop.name}
+                      className="flex flex-col items-center text-center relative z-10 px-1"
+                    >
                       {/* Node Icon */}
                       <div
                         className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-3 shadow-sm transition-transform duration-300 hover:scale-110 ${
                           isLast
-                            ? 'bg-emerald-800 text-gold-300 ring-2 ring-emerald-600/30'
-                            : 'bg-forest-100 text-forest-800 border border-forest-200'
+                            ? "bg-emerald-800 text-gold-300 ring-2 ring-emerald-600/30"
+                            : "bg-forest-100 text-forest-800 border border-forest-200"
                         }`}
                       >
                         <Icon className="w-5 h-5 stroke-[1.75]" />
@@ -408,11 +457,11 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                       <span
                         className={`text-[10px] font-semibold uppercase tracking-wider mb-1 px-1.5 py-0.5 rounded ${
                           isLast
-                            ? 'text-emerald-900 bg-emerald-100 font-bold'
-                            : 'text-forest-700 bg-forest-50'
+                            ? "text-emerald-900 bg-emerald-100 font-bold"
+                            : "text-forest-700 bg-forest-50"
                         }`}
                       >
-                        {isLast ? 'Complete' : `Stop 0${i + 1}`}
+                        {isLast ? "Complete" : `Stop 0${i + 1}`}
                       </span>
 
                       {/* Stop Name */}
@@ -440,7 +489,9 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                       Island-Circling Circuit · Completes Full Loop
                     </span>
                     <p className="text-[11px] text-earth-700 font-light">
-                      The boat circles around the island canals and finishes by gently returning to the initial boarding point at <strong>Punnamada Lake</strong>.
+                      The boat circles around the island canals and finishes by
+                      gently returning to the initial boarding point at{" "}
+                      <strong>Punnamada Lake</strong>.
                     </p>
                   </div>
                 </div>
@@ -462,8 +513,8 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                       <div
                         className={`absolute -left-[39px] sm:-left-[43px] top-1.5 w-8 h-8 rounded-xl flex items-center justify-center shadow-sm ${
                           isLast
-                            ? 'bg-emerald-800 text-gold-300 ring-2 ring-emerald-500/40'
-                            : 'bg-forest-100 border border-forest-200 text-forest-800'
+                            ? "bg-emerald-800 text-gold-300 ring-2 ring-emerald-500/40"
+                            : "bg-forest-100 border border-forest-200 text-forest-800"
                         }`}
                       >
                         <Icon className="w-4 h-4" />
@@ -473,24 +524,28 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                       <div
                         className={`p-4 rounded-xl border ${
                           isLast
-                            ? 'bg-emerald-50/60 border-emerald-300 shadow-sm'
-                            : 'bg-cream-50/70 border-forest-100'
+                            ? "bg-emerald-50/60 border-emerald-300 shadow-sm"
+                            : "bg-cream-50/70 border-forest-100"
                         }`}
                       >
                         <div className="flex items-center justify-between mb-1">
                           <span
                             className={`text-[10px] font-semibold uppercase tracking-widest ${
-                              isLast ? 'text-emerald-900 font-bold' : 'text-forest-700'
+                              isLast
+                                ? "text-emerald-900 font-bold"
+                                : "text-forest-700"
                             }`}
                           >
-                            {isLast ? 'Stop 07 · Loop Completed' : `Stop 0${i + 1}`}
+                            {isLast
+                              ? "Stop 07 · Loop Completed"
+                              : `Stop 0${i + 1}`}
                           </span>
                           {stop.badge && (
                             <span
                               className={`text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full ${
                                 isLast
-                                  ? 'bg-emerald-200/80 text-emerald-950'
-                                  : 'bg-forest-100 text-forest-800'
+                                  ? "bg-emerald-200/80 text-emerald-950"
+                                  : "bg-forest-100 text-forest-800"
                               }`}
                             >
                               {stop.badge}
@@ -543,7 +598,11 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
                 Want More Time?
               </h3>
               <p className="text-sm text-cream-100/90 font-light leading-relaxed">
-                Custom durations are also available for guests who want to explore at their own pace. Trips longer than 3 hours can be arranged on request. While 3 hours remains our recommended option for a balanced experience, we are happy to craft a flexible schedule for your group.
+                Custom durations are also available for guests who want to
+                explore at their own pace. Trips longer than 3 hours can be
+                arranged on request. While 3 hours remains our recommended
+                option for a balanced experience, we are happy to craft a
+                flexible schedule for your group.
               </p>
             </div>
 
@@ -562,4 +621,3 @@ export default function JourneySection({ onOpenBooking }: JourneySectionProps) {
     </section>
   );
 }
-
