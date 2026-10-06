@@ -185,7 +185,23 @@ export const DEFAULT_PRICING: {
   updatedAt: new Date(),
 };
 
-export const DEFAULT_PACKAGES = [
+export interface IDefaultPackage {
+  _id: string;
+  name: string;
+  duration: string;
+  description: string;
+  price: number;
+  originalPrice: number | null;
+  offerActive: boolean;
+  maxPeople: number;
+  recommended: boolean;
+  active: boolean;
+  route: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+export const DEFAULT_PACKAGES: IDefaultPackage[] = [
   {
     _id: 'default-pkg-1',
     name: '2 Hour Shikara Experience',
