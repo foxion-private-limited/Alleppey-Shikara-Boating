@@ -6,9 +6,9 @@ import { getBaseUrl } from '@/lib/siteUrl';
 const baseUrl = getBaseUrl();
 
 export const metadata: Metadata = {
-  title: 'Photo Gallery | Alleppey Village Shikara Boating',
+  title: 'Alleppey Shikara Boating Gallery | Alappuzha Backwaters',
   description:
-    'Browse our curated photo moments from Alleppey Village Shikara Boating in Alappuzha, Kerala. Discover peaceful village canals, lush paddy fields, and golden sunsets.',
+    'Explore photos of Alleppey shikara boating, Kerala backwaters, village canals and scenic Alappuzha boat rides.',
   keywords: [
     'Alleppey Shikara gallery',
     'Alappuzha boating photos',
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     canonical: `${baseUrl}/gallery`,
   },
   openGraph: {
-    title: 'Photo Gallery | Alleppey Village Shikara Boating',
+    title: 'Alleppey Shikara Boating Gallery | Alappuzha Backwaters',
     description:
-      'Explore photographic glimpses of authentic Shikara boat cruises, tranquil backwater canals, and golden sunsets in Alappuzha, Kerala.',
+      'Explore photos of Alleppey shikara boating, Kerala backwaters, village canals and scenic Alappuzha boat rides.',
     url: `${baseUrl}/gallery`,
     siteName: 'Alleppey Village Shikara Boating',
     images: [
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Photo Gallery | Alleppey Village Shikara Boating',
+    title: 'Alleppey Shikara Boating Gallery | Alappuzha Backwaters',
     description:
-      'Explore photographic glimpses of authentic Shikara boat cruises in Alappuzha, Kerala.',
+      'Explore photos of Alleppey shikara boating, Kerala backwaters, village canals and scenic Alappuzha boat rides.',
     images: ['/images/hero-shikara.jpg'],
   },
 };
@@ -52,9 +52,9 @@ export default function GalleryPage() {
   const galleryJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ImageGallery',
-    name: 'Alleppey Village Shikara Boating Photo Gallery',
+    name: 'Alleppey Shikara Boating Gallery',
     description:
-      'Photographic collection of authentic Shikara boating journeys through the village backwaters of Alappuzha, Kerala.',
+      'Explore photos of Alleppey shikara boating, Kerala backwaters, village canals and scenic Alappuzha boat rides.',
     url: `${baseUrl}/gallery`,
     provider: {
       '@type': 'TouristAttraction',

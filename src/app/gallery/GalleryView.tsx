@@ -148,7 +148,7 @@ export default function GalleryView({ initialPhotos = [] }: GalleryViewProps) {
                   <span>Photographic Collection · {initialPhotos.length} Moments</span>
                 </div>
                 <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.14] text-cream-50 mb-5">
-                  Moments From the Backwaters
+                  Alleppey Shikara Boating Gallery
                 </h1>
                 <p className="text-base sm:text-lg text-cream-100/90 font-light leading-relaxed max-w-2xl">
                   An art-directed photographic collection of authentic guest voyages, quiet village canal crossings, and serene waterways in Alappuzha, Kerala.
@@ -159,7 +159,7 @@ export default function GalleryView({ initialPhotos = [] }: GalleryViewProps) {
                 <div className="relative rounded-2xl overflow-hidden border border-cream-100/15 shadow-2xl bg-forest-900/60 aspect-[16/10]">
                   <Image
                     src="/gallery/1.jpg"
-                    alt="Traditional Shikara Boat cruising through Punnamada Lake, Alappuzha"
+                    alt="Shikara boat cruising through the Alleppey backwaters on Punnamada Lake"
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 40vw"
@@ -236,7 +236,7 @@ export default function GalleryView({ initialPhotos = [] }: GalleryViewProps) {
                     >
                       <Image
                         src={photo.src}
-                        alt={photo.alt}
+                        alt={photo.alt || `Shikara boat cruising through the Alleppey backwaters - ${photo.title}`}
                         width={photo.width}
                         height={photo.height}
                         sizes={
@@ -401,7 +401,7 @@ export default function GalleryView({ initialPhotos = [] }: GalleryViewProps) {
           >
             <Image
               src={activePhoto.src}
-              alt={activePhoto.alt}
+              alt={activePhoto.alt || `Shikara boat cruising through the Alleppey backwaters - ${activePhoto.title}`}
               fill
               sizes="100vw"
               className="object-contain"

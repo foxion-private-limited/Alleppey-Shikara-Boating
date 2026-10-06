@@ -42,7 +42,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Golden Sunset Bow Cruise',
     category: 'Shikara Cruises',
     location: 'Punnamada Lake, Alappuzha',
-    alt: 'Traveler relaxing on the front bow of traditional Shikara boat at golden hour in Alleppey',
+    alt: 'Traveler relaxing on the front bow of a traditional shikara boat at golden hour on Punnamada Lake in Alleppey',
     span: 'col-span-1 sm:col-span-2 lg:col-span-8',
   },
   {
@@ -54,7 +54,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Family Moments on the Lake',
     category: 'Family & Friends',
     location: 'Open Lake Waters',
-    alt: 'Smiling family with child enjoying cushioned front deck of Shikara boat in Alappuzha',
+    alt: 'Family with a young child enjoying the cushioned front deck of a private shikara boat on Alappuzha backwaters',
     span: 'col-span-1 sm:col-span-1 lg:col-span-4',
   },
 
@@ -68,7 +68,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Romantic Evening on the Waters',
     category: 'Couples & Romance',
     location: 'Vembanad Lake Horizon',
-    alt: 'Couple relaxing together on Shikara front deck under evening sky in Alleppey',
+    alt: 'Couple relaxing together on a shikara boat deck under the twilight evening sky on Vembanad Lake',
     span: 'col-span-1 sm:col-span-1 lg:col-span-6',
   },
   {
@@ -80,7 +80,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Watching Houseboats in Golden Light',
     category: 'Couples & Romance',
     location: 'Punnamada Backwaters',
-    alt: 'Couple pointing at traditional kettuvallam houseboat passing by in golden afternoon sunlight',
+    alt: 'Couple on a shikara boat watching a traditional kettuvallam houseboat glide past in golden afternoon light',
     span: 'col-span-1 sm:col-span-1 lg:col-span-6',
   },
 
@@ -94,7 +94,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Friends on a Backwater Voyage',
     category: 'Family & Friends',
     location: 'Alleppey Waterways',
-    alt: 'Group of four happy friends enjoying private Shikara boat ride with decorative dreamcatchers',
+    alt: 'Group of friends enjoying a private shikara boat cruise through scenic Alleppey backwater waterways',
     span: 'col-span-1 sm:col-span-2 lg:col-span-8',
   },
   {
@@ -106,7 +106,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Joy on the Sun Deck',
     category: 'Family & Friends',
     location: 'Village Canal Route',
-    alt: 'Little toddler smiling while seated on comfortable yellow sun deck cushions',
+    alt: 'Young child smiling while seated comfortably on the cushioned sun deck of a shikara boat',
     span: 'col-span-1 sm:col-span-1 lg:col-span-4',
   },
 
@@ -120,7 +120,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Canal Walking Tour',
     category: 'Village Canals',
     location: 'Kainakary Village Walk',
-    alt: 'Tourists taking guided village walk along stone canal bank during Shikara tour',
+    alt: 'Tourists taking a guided village walk along a scenic stone canal bank during a shikara tour in Kainakary',
     span: 'col-span-1 sm:col-span-1 lg:col-span-6',
   },
   {
@@ -132,7 +132,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Relaxing on the Sun Deck',
     category: 'Shikara Cruises',
     location: 'Vazhicherry Waterways',
-    alt: 'Guest lounging on the spacious sun deck cushion of Shikara boat',
+    alt: 'Guest relaxing on the spacious shaded sun deck cushions of a shikara boat in Vazhicherry',
     span: 'col-span-1 sm:col-span-1 lg:col-span-6',
   },
 
@@ -146,7 +146,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'View Through the Shaded Cabin',
     category: 'Shikara Cruises',
     location: 'Private Shikara Interior',
-    alt: 'Interior perspective through bamboo thatch ceiling and rattan chairs towards couple on bow',
+    alt: 'Interior perspective through the handcrafted bamboo ceiling and cane chairs towards the open boat bow',
     span: 'col-span-1 sm:col-span-2 lg:col-span-8',
   },
   {
@@ -158,7 +158,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Curious Wonder',
     category: 'Family & Friends',
     location: 'Canal Crossing',
-    alt: 'Close-up portrait of baby girl on boat deck looking across the water',
+    alt: 'Toddler on the wooden boat deck curiously gazing across the calm village canal waters',
     span: 'col-span-1 sm:col-span-1 lg:col-span-4',
   },
 
@@ -172,7 +172,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Traditional Kasavu Saree Elegance',
     category: 'Village Canals',
     location: 'Nedumudi Canals',
-    alt: 'Lady in traditional Kerala Kasavu saree seated inside authentic bamboo-roofed Shikara boat',
+    alt: 'Woman wearing a traditional Kerala Kasavu saree seated inside an authentic bamboo-roofed shikara boat',
     span: 'col-span-1 sm:col-span-1 lg:col-span-4',
   },
   {
@@ -184,7 +184,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Mother & Child on the Waterways',
     category: 'Family & Friends',
     location: 'Alappuzha Backwaters',
-    alt: 'Mother and child smiling together while seated on the boat bow',
+    alt: 'Mother and child sharing a cheerful moment while seated on the front deck of a shikara boat',
     span: 'col-span-1 sm:col-span-1 lg:col-span-4',
   },
   {
@@ -196,7 +196,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Gliding Past Coconut Groves',
     category: 'Shikara Cruises',
     location: 'Champakulam Waters',
-    alt: 'Lady in blue dress smiling on Shikara boat with coconut groves and blue sky in background',
+    alt: 'Guest enjoying a peaceful boat ride with lush coconut palm groves and blue skies along Champakulam canals',
     span: 'col-span-1 sm:col-span-1 lg:col-span-4',
   },
   {
@@ -208,7 +208,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Under Handcrafted Dreamcatchers',
     category: 'Couples & Romance',
     location: 'Vembanad Sunset Viewpoint',
-    alt: 'Couple smiling on Shikara boat deck framed by colorful handcrafted hanging dreamcatchers',
+    alt: 'Couple smiling on the shikara boat deck framed by colorful handcrafted hanging dreamcatchers',
     span: 'col-span-1 sm:col-span-2 lg:col-span-8',
   },
   {
@@ -220,7 +220,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     title: 'Romantic Kiss on the Lake',
     category: 'Couples & Romance',
     location: 'Quiet Village Stretch',
-    alt: 'Couple enjoying a romantic moment on the front of Shikara boat under bright blue skies',
+    alt: 'Couple enjoying a private romantic cruise on the front of a shikara boat along quiet village waterways',
     span: 'col-span-1 sm:col-span-1 lg:col-span-4',
   },
 ];
