@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Alleppey Village Shikara Boating' }],
   alternates: {
-    canonical: `${baseUrl}/`,
+    canonical: '/',
   },
   icons: {
     icon: [
