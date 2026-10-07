@@ -91,6 +91,9 @@ export const metadata: Metadata = {
   },
   verification: {
     yandex: 'f6b32eaf7ad40810',
+    other: {
+      'p:domain_verify': 'c07d761692067a84eae8bbf0129f8aaf',
+    },
   },
 };
 
